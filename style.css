@@ -136,6 +136,11 @@ section{
     margin: 15px auto;
 }
 
+.logo-image {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+
 
 .card:hover{
     transform: scale(1.1);
