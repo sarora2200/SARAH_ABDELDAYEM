@@ -53,7 +53,7 @@ section{
 
 .main{
     width: 100;
-    min-height: 100vh;
+    min-height: 130vh;
     display: flex;
     align-items: center;
     background: url(images/background.jpg) no-repeat;
