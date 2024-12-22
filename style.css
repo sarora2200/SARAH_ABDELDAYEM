@@ -9,7 +9,7 @@
 }
 
 header{
-    background-color: rgb(152, 170, 72);
+    background-color: #9754a597;
     width: 100%;
     position: fixed;
     z-index: 999;
@@ -63,22 +63,22 @@ section{
 }
 
 .main h2{
-    color: #191717;
-    font-size: 1.4em;
+    color: #DC8CD6;
+    font-size: 3em;
     font-weight: 600;
 }
 
 .main h2 span{
     display: inline-block;
-    margin-top: 10px;
-    color: #cc255a;
-    font-size: 3em;
+    margin-top: 30px;
+    color:  rgb(151, 175, 82);
+    font-size: .7em;
     font-weight: 600;
 }
 
 .main h3{
     color: #191717;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 700;
     letter-spacing: 1px;
     margin-top: 10px;
@@ -87,7 +87,7 @@ section{
 
 .main-btn{
     color: #191717;
-    background-color: #d83b6d;
+    background-color: #d288e0;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 700;
@@ -100,7 +100,7 @@ section{
 }
 
 .main-btn:hover{
-    background-color: #cc255a;
+    background-color: #9952a8;
     transform: scale(1.1);
 }
 
@@ -114,7 +114,7 @@ section{
 .title{
     display: flex;
     justify-content: center;
-    color: #cc255a;
+    color: #d288e0;
     font-size: 2.2em;
     font-weight: 800;
     margin-bottom: 30px;
@@ -147,7 +147,7 @@ section{
 }
 
 .icon{
-    color: #cc255a;
+    color: #d288e0;
     font-size: 7em;
     text-align: center;
 }
@@ -157,174 +157,269 @@ section{
 }
 
 .info h3{
-    color: #cc255a;
+    color: #d288e0;
     font-size: 1.2em;
     font-weight: 700;
     margin: 10px;
 }
 
-/* projects section */
-.projects {
-    background-color: #cc255a72;
-    padding: 50px 0; /* Add padding for consistency */
+/* Projects Section */
+.projects-section {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+    padding-top: 80px; /* To ensure space below the header (adjust this value if needed) */
 }
 
-.projects .title {
-    display: flex;
-    justify-content: center;
-    color: #cc255a;
-    font-size: 2em;
-    font-weight: 800;
+.projects-section .title {
+    color: #d288e0;
+    font-size: 2.5em;
+    font-weight: bold;
     margin-bottom: 30px;
 }
 
-.projects .content {
+.projects-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .project-card {
     background-color: #ffffff;
-    border: 5px solid #ffffff;
-    min-height: 12em;
-    width: 20em;
+    width: 300px;
+    max-width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 20px;
-    margin: 15px;
-    transition: 0.7s ease;
-    box-sizing: border-box;
-    flex: 0 0 calc(33.33% - 50px);
-}
-
-.project-card:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .project-card {
-        width: calc(50% - 20px); /* Two cards per row */
-    }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px; /* Add space below each card */
 }
 
 .project-card:hover {
-    transform: scale(1.1);
-}
-
-.project-card:hover .project-image {
-    opacity: 0.9;
-}
-
-.project-image img {
-    width: 100%;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project-info {
-    padding: 1em;
+    padding: 20px;
+    text-align: center; /* Center align text */
 }
 
 .project-category {
-    font-size: 0.8em;
-    color: #191717;
+    color: #9952a8;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .project-title {
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-weight: 800;
-    margin-top: 10px;
+    color: #333;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-.more-details {
-    text-decoration: none;
-    color: #cc255a;
+.project-description {
+    color: #666;
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 20px;
 }
 
-.more-details:hover {
-    color: #d83b6d;
+.project-sample {
+    overflow: hidden; /* Prevent image from overflowing the container */
+    height: 200px; /* Define fixed height for the images */
 }
 
-/* For smaller screens */
+.project-sample img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the entire area without distortion */
+    cursor: pointer;
+    border-top: 2px solid #ddd;
+}
+
+.project-sample img:hover {
+    opacity: 0.9;
+}
+
 @media (max-width: 768px) {
-    .project-info {
-        padding: 0.1em; /* Adjust the padding for smaller screens */
+    .project-card {
+        width: 100%; /* Make cards full-width on smaller screens */
     }
 
-    .project-category {
-        font-size: 0.7em; /* Adjust the font size for smaller screens */
-    }
-
-    .project-title {
-        flex-direction: column; /* Stack the title elements vertically on smaller screens */
-        align-items: flex-start; /* Align items to the start of the column */
-    }
-
-    .more-details {
-        margin-top: 10px; /* Add space between title and details on smaller screens */
+    .projects-section .title {
+        font-size: 2em;
     }
 }
 
-/* contact section */
 
-.cards-contact {
-    background-color: #f4f4f4;
+/* Achievements Section */
+.achievements-section {
+    background-color: #ffffff;
     padding: 50px 0;
-    text-align: center;
+    text-align: center; /* Center the title of the achievements section */
+    padding-top: 80px; /* To ensure space below the header (adjust this value if needed) */
 }
 
-.title {
-    color: #cc255a;
-    font-size: 2em;
-    font-weight: 800;
-    margin-bottom: 30px;
+.achievements-section .title {
+    display: flex;
+    justify-content: center; /* Center the title */
+    color: #d288e0;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
 
-.content {
+.achievements-section .achievements-content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 30px; /* Spacing between achievement cards */
 }
 
-.card {
+.achievement-card {
     background-color: #ffffff;
-    width: 250px;
-    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.1);
-    border-radius: 10px;
-    padding: 25px;
-    margin: 15px;
-    transition: transform 0.3s ease-in-out;
+    width: 270px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    text-align: center; /* Center align the content inside each card */
 }
 
-.card:hover {
-    transform: scale(1.05);
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-.icon {
-    color: #cc255a;
-    font-size: 4em;
+.achievement-card .icon img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #d288e0;
 }
 
-.info h3 {
-    color: #191717;
-    font-size: 1.2em;
+.achievement-card .info {
+    padding: 20px;
+    text-align: center; /* Center the text within the card info */
+}
+
+.achievement-card .info h3 {
+    color: #333;
+    font-size: 1.3em;
     font-weight: 700;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-.email {
-    color: #cc255a;
-    text-decoration: none;
-    font-weight: 600;
-    display: block;
-    margin-top: 5px;
+.achievement-card .info p {
+    color: #555;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
-.phone {
-    font-weight: 600;
+
+
+/* Contact Section */
+.contact-section {  
+    background-color: #f4f4f4;  
+    padding: 60px 20px;  
+    text-align: center;  
 }
+
+.contact-section .title {  
+    color: #d288e0;  
+    font-size: 2.5em;  
+    font-weight: 800;  
+    margin-bottom: 40px;  
+    text-transform: uppercase;  
+    letter-spacing: 2px;
+}
+
+.contact-section .contact-content {  
+    display: flex;  
+    justify-content: center;  
+    flex-wrap: wrap;  
+    gap: 30px; /* Spacing between cards */  
+    margin-top: 20px;
+}
+
+.contact-card {  
+    background-color: #ffffff;  
+    width: 270px;  
+    max-width: 100%; /* Ensure responsiveness */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  
+    border-radius: 12px;  
+    overflow: hidden;  
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;  
+    cursor: pointer;  
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-card:hover {  
+    transform: translateY(-8px);  
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);  
+    background-color: #f9f9f9;  /* Light hover effect */
+}
+
+.contact-card .icon {  
+    font-size: 3em;  
+    color: #d288e0;  
+    padding: 20px;  
+    background-color: #f4f4f4;  /* Light background for the icon */
+    border-radius: 50%;
+    margin-bottom: 20px; /* Space between icon and text */
+}
+
+.contact-card .info {  
+    padding: 10px;  
+    text-align: center; /* Center the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-card .info h3 {  
+    color: #333;  
+    font-size: 1.3em;  
+    font-weight: 700;  
+    margin-bottom: 10px;  
+    letter-spacing: 0.5px;
+}
+
+.contact-card .info p,  
+.contact-card .info a {  
+    color: #555;  
+    font-size: 1em;  
+    font-weight: 400;  
+    text-decoration: none;  
+    line-height: 1.6;  
+}
+
+.contact-card .info a:hover {  
+    text-decoration: underline;  
+    color: #d288e0; /* Highlight link on hover */
+}
+
+@media (max-width: 768px) {
+    .contact-card {  
+        width: 100%; /* Make cards full width on smaller screens */
+    }
+
+    .contact-section .title {  
+        font-size: 2em;  
+    }
+}
+
 
 /* footer section */
 
@@ -344,7 +439,7 @@ section{
 }
 
 .footer-title span {
-    color: #cc255a;
+    color: #9952a8 ;
 }
 
 .social-icons {
