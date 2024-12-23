@@ -195,6 +195,7 @@ section{
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 30px; /* Add space below each card */
+    text-align: center; /* Center align content */
 }
 
 .project-card:hover {
@@ -244,6 +245,36 @@ section{
 .project-sample img:hover {
     opacity: 0.9;
 }
+
+/* Styling for 'More Details' Link */
+.project-details-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #d288e0;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 2px solid #d288e0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.project-details-link:hover {
+    background-color: #d288e0;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%; /* Make cards full-width on smaller screens */
+    }
+
+    .projects-section .title {
+        font-size: 2em;
+    }
+}
+
 
 @media (max-width: 768px) {
     .project-card {
@@ -325,38 +356,38 @@ section{
 
 
 /* Contact Section */
-.contact-section {  
-    background-color: #f4f4f4;  
-    padding: 60px 20px;  
-    text-align: center;  
+.contact-section {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.contact-section .title {  
-    color: #d288e0;  
-    font-size: 2.5em;  
-    font-weight: 800;  
-    margin-bottom: 40px;  
-    text-transform: uppercase;  
+.contact-section .title {
+    color: #d288e0;
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.contact-section .contact-content {  
-    display: flex;  
-    justify-content: center;  
-    flex-wrap: wrap;  
-    gap: 30px; /* Spacing between cards */  
+.contact-section .contact-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Spacing between cards */
     margin-top: 20px;
 }
 
-.contact-card {  
-    background-color: #ffffff;  
-    width: 270px;  
+.contact-card {
+    background-color: #ffffff;
+    width: 270px;
     max-width: 100%; /* Ensure responsiveness */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  
-    border-radius: 12px;  
-    overflow: hidden;  
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;  
-    cursor: pointer;  
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -364,23 +395,23 @@ section{
     align-items: center;
 }
 
-.contact-card:hover {  
-    transform: translateY(-8px);  
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);  
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     background-color: #f9f9f9;  /* Light hover effect */
 }
 
-.contact-card .icon {  
-    font-size: 3em;  
-    color: #d288e0;  
-    padding: 20px;  
+.contact-card .icon {
+    font-size: 3em;
+    color: #d288e0;
+    padding: 20px;
     background-color: #f4f4f4;  /* Light background for the icon */
     border-radius: 50%;
     margin-bottom: 20px; /* Space between icon and text */
 }
 
-.contact-card .info {  
-    padding: 10px;  
+.contact-card .info {
+    padding: 10px;
     text-align: center; /* Center the text */
     display: flex;
     flex-direction: column;
@@ -388,35 +419,35 @@ section{
     align-items: center;
 }
 
-.contact-card .info h3 {  
-    color: #333;  
-    font-size: 1.3em;  
-    font-weight: 700;  
-    margin-bottom: 10px;  
+.contact-card .info h3 {
+    color: #333;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 10px;
     letter-spacing: 0.5px;
 }
 
-.contact-card .info p,  
-.contact-card .info a {  
-    color: #555;  
-    font-size: 1em;  
-    font-weight: 400;  
-    text-decoration: none;  
-    line-height: 1.6;  
+.contact-card .info p,
+.contact-card .info a {
+    color: #555;
+    font-size: 1em;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 1.6;
 }
 
-.contact-card .info a:hover {  
-    text-decoration: underline;  
+.contact-card .info a:hover {
+    text-decoration: underline;
     color: #d288e0; /* Highlight link on hover */
 }
 
 @media (max-width: 768px) {
-    .contact-card {  
+    .contact-card {
         width: 100%; /* Make cards full width on smaller screens */
     }
 
-    .contact-section .title {  
-        font-size: 2em;  
+    .contact-section .title {
+        font-size: 2em;
     }
 }
 
