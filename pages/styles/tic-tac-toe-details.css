@@ -1,0 +1,232 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f0f9ff, #c9e6ff);
+    animation: backgroundShift 5s infinite alternate;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(to right, #d288e0, #ff8ca8);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeInSlideDown 1s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-delay: 0.3s;
+}
+
+/* Project Details Section */
+.project-details {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(to bottom right, #ffffff, #e8f5ff);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    animation: popIn 1s ease-out;
+}
+
+.project-details h2 {
+    color: #d288e0;
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #d288e0;
+    padding-bottom: 8px;
+    display: inline-block;
+    transform: scale(0.9);
+    animation: bounceIn 1s ease-in-out;
+}
+
+.project-details h3 {
+    color: #444;
+    font-size: 1.7em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateX(-20px);
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.project-details p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.project-details ul {
+    list-style: none;
+    margin: 20px 0 25px;
+    padding: 0;
+    font-size: 1.1em;
+}
+
+.project-details li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.8;
+    color: #555;
+    animation: slideInFromRight 1s ease-out forwards;
+    animation-delay: calc(0.2s * var(--index));
+}
+
+.project-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d288e0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Links */
+.project-details a {
+    color: #d288e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.project-details a:hover {
+    text-decoration: underline;
+    color: #aa64c0;
+    transform: scale(1.1);
+}
+
+/* Button Styling */
+.project-details a[href*="https://"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(to right, #d288e0, #ff8ca8);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.4s ease;
+    text-align: center;
+}
+
+.project-details a[href*="https://"]:hover {
+    background: linear-gradient(to right, #aa64c0, #e85d87);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .project-details {
+        padding: 20px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 1.6em;
+    }
+
+    .project-details a[href*="https://"] {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes backgroundShift {
+    0% {
+        background-color: #f0f9ff;
+    }
+    100% {
+        background-color: #e0f5ff;
+    }
+}
