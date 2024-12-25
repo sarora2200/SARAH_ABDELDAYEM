@@ -168,7 +168,7 @@ section{
     background-color: #f4f4f4;
     padding: 60px 20px;
     text-align: center;
-    padding-top: 80px; /* To ensure space below the header (adjust this value if needed) */
+    padding-top: 110px; /* To ensure space below the header (adjust this value if needed) */
 }
 
 .projects-section .title {
@@ -292,7 +292,7 @@ section{
     background-color: #ffffff;
     padding: 50px 0;
     text-align: center; /* Center the title of the achievements section */
-    padding-top: 80px; /* To ensure space below the header (adjust this value if needed) */
+    padding-top: 125px; /* To ensure space below the header (adjust this value if needed) */
 }
 
 .achievements-section .title {
@@ -360,6 +360,7 @@ section{
     background-color: #f4f4f4;
     padding: 60px 20px;
     text-align: center;
+    padding-top: 95px; /* To ensure space below the header (adjust this value if needed) */
 }
 
 .contact-section .title {
