@@ -111,7 +111,7 @@ section{
 }
 
 /* Ensure the body and parent containers have no restrictions */
-body, html {
+/*body, html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -151,7 +151,7 @@ body, html {
 .aboutcard {
     background-color: #ffffff;
     width: 100%; /* Make the card span the full width of the content */
-    max-width: 1200px; /* Add max width for better control */
+    max-width: 100%; /* Remove any max-width restriction */
     display: flex;
     align-items: center; /* Align items (image and text) in the center vertically */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
@@ -169,16 +169,16 @@ body, html {
 /* Image Styling */
 .about-image {
     margin-left: 20px; /* Add margin to space out the image from text */
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 50%; /* Set the image to take up 50% of the card width */
 }
 
 .about-image img {
     border-radius: 10px;
     width: 100%; /* Make the image take up the full width of its container */
-    max-width: 300px; /* Limit the width to 300px, but allow it to scale on smaller screens */
     height: auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: block;
-    margin: 0 auto;
 }
 
 /* Text Styling */
@@ -209,6 +209,10 @@ body, html {
     .aboutcard {
         width: 100%; /* Ensure the card is full-width on small screens */
         padding: 20px;
+    }
+
+    .about-image {
+        width: 100%; /* Allow the image to take up the full width of the container */
     }
 
     .about-image img {
