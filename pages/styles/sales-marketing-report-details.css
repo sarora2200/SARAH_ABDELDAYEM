@@ -1,0 +1,179 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Header Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #e8f5e9; /* Light green background */
+    padding-top: 60px;
+    animation: backgroundPulse 5s infinite alternate;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #3F53E0, #b1b8ed); /* Green gradient */
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1s ease-in-out;
+}
+
+/* Header Title Styling */
+header h1 {
+    font-size: 2.5em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Project Details Section */
+.project-details {
+    max-width: 900px;
+    margin: 100px auto 30px;
+    padding: 30px;
+    background: #ffffff; /* White background for the project section */
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Project Section Headings */
+.project-details h2, .project-details h3 {
+    color: #3F53E0; /* Green color for headings */
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #b1b8ed;
+    padding-bottom: 8px;
+    display: inline-block;
+    animation: popIn 1s ease-in-out;
+}
+
+/* List Styling */
+.project-details ul {
+    list-style: none;
+    margin: 20px 0 25px;
+    padding: 0;
+    font-size: 1.1em;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+/* List Items Styling */
+.project-details li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.8;
+    color: #555;
+    animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+.project-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #3F53E0;
+    font-size: 1.5em;
+}
+
+/* Demo Button Styling */
+.demo-button-box {
+    margin-top: 30px;
+    padding: 0;
+    text-align: left; /* Align the button to the left */
+}
+
+/* Styling for the link (button) inside the demo box */
+.demo-button-box a {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(to right, #3F53E0, #b1b8ed); /* Green gradient button */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.2em;
+}
+
+.demo-button-box a:hover {
+    background: linear-gradient(to right, #3F53E0, #b1b8ed); /* Hover effect for the button */
+    transform: scale(1.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundPulse {
+    0% {
+        background-color: #e8f5e9;
+    }
+    100% {
+        background-color: #e1f5e1;
+    }
+}
