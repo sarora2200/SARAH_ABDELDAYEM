@@ -164,7 +164,7 @@ section{
 .about-image {
     margin-left: 20px; /* Add margin to space out the image from text */
     flex-shrink: 0; /* Prevent image from shrinking */
-    width: 20%; /* Set the image to take up 50% of the card width */
+    width: 10%; /* Set the image to take up 50% of the card width */
     height: auto; /* Ensure the height scales with the width */
 }
 
