@@ -110,12 +110,6 @@ section{
     padding-right: 30px;
 }
 
-/* Ensure the body and parent containers have no restrictions */
-/*body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
 
 /* About Section */
 .about-section {
@@ -171,12 +165,14 @@ section{
     margin-left: 20px; /* Add margin to space out the image from text */
     flex-shrink: 0; /* Prevent image from shrinking */
     width: 50%; /* Set the image to take up 50% of the card width */
+    height: auto; /* Ensure the height scales with the width */
 }
 
 .about-image img {
     border-radius: 10px;
     width: 100%; /* Make the image take up the full width of its container */
     height: auto;
+    object-fit: cover; /* Ensure the image maintains aspect ratio and covers the space */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: block;
 }
@@ -223,7 +219,6 @@ section{
         font-size: 2em;
     }
 }
-
 
 
 /*services section*/
