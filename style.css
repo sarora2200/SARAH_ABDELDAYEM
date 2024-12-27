@@ -110,6 +110,117 @@ section{
     padding-right: 30px;
 }
 
+/* Ensure the body and parent containers have no restrictions */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* About Section */
+.about-section {
+    padding-top: 60px; /* Ensure space below the fixed header */
+    background-color: #f9f9f9;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    margin: 0;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #d288e0;
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    padding: 20px 0; /* Add padding inside the title section */
+}
+
+.content {
+    display: flex;
+    flex-direction: row; /* Cards will be arranged horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if there isn't enough space */
+    width: 100%; /* Ensure content spans the full width */
+    justify-content: center; /* Center-align the cards horizontally */
+    gap: 20px; /* Add spacing between the cards */
+    margin-top: 30px; /* Ensure some spacing above the cards */
+}
+
+/* Full-Width Card */
+.aboutcard {
+    background-color: #ffffff;
+    width: 100%; /* Make the card span the full width of the content */
+    max-width: 1200px; /* Add max width for better control */
+    display: flex;
+    align-items: center; /* Align items (image and text) in the center vertically */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Add some radius for rounded corners */
+    padding: 30px; /* Adjust padding for spacing inside the card */
+    margin: 15px; /* Margin for separation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutcard:hover {
+    transform: scale(1.02); /* Subtle hover effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Styling */
+.about-image {
+    margin-left: 20px; /* Add margin to space out the image from text */
+}
+
+.about-image img {
+    border-radius: 10px;
+    width: 300px; /* Set a fixed width for the image */
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Text Styling */
+.info {
+    flex: 1; /* Ensure text takes up the remaining space */
+}
+
+.info h3 {
+    color: #d288e0;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.info p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+
+    .aboutcard {
+        width: 100%; /* Ensure the card is full-width on small screens */
+        padding: 20px;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+}
+
+
+
 /*services section*/
 .title{
     display: flex;
@@ -168,7 +279,7 @@ section{
     background-color: #f4f4f4;
     padding: 60px 20px;
     text-align: center;
-    padding-top: 110px; /* To ensure space below the header (adjust this value if needed) */
+    padding-top: 90px; /* To ensure space below the header (adjust this value if needed) */
 }
 
 .projects-section .title {
@@ -292,7 +403,7 @@ section{
     background-color: #ffffff;
     padding: 50px 0;
     text-align: center; /* Center the title of the achievements section */
-    padding-top: 125px; /* To ensure space below the header (adjust this value if needed) */
+    padding-top: 100px; /* To ensure space below the header (adjust this value if needed) */
 }
 
 .achievements-section .title {
