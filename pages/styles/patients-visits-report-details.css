@@ -115,6 +115,132 @@ header h1 {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
+/* Base Styles (default for large screens) */
+body {
+    padding-top: 100px; /* Default padding for fixed header */
+}
+
+header h1 {
+    font-size: 2.5em; /* Default header title size */
+}
+
+.project-details {
+    max-width: 900px;
+    margin: 100px auto 30px;
+    padding: 30px;
+}
+
+.project-details h2, .project-details h3 {
+    font-size: 2em;
+}
+
+.project-details ul {
+    font-size: 1.1em;
+}
+
+.demo-button-box a {
+    font-size: 1.2em;
+    padding: 14px 28px;
+}
+
+/* Small Mobile Screens (320px - 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding-top: 120px; /* Extra padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 1.8em;
+        letter-spacing: 1px;
+    }
+
+    /* Add a new class to the first section to avoid overlap */
+    .first-heading {
+        margin-top: calc(60px + 30px); /* Height of the header + extra spacing */
+        text-align: center;
+        color: #3F53E0;
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    .project-details {
+        margin: 140px auto 20px; /* Adjust the margin for smaller screens */
+        padding: 15px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 1.5em;
+    }
+
+    .project-details ul {
+        font-size: 1em;
+    }
+
+    .demo-button-box a {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
+/* Medium Screens (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .project-details {
+        margin: 120px auto 30px;
+        padding: 20px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 1.8em;
+    }
+
+    .project-details ul {
+        font-size: 1.05em;
+    }
+
+    .demo-button-box a {
+        font-size: 1.1em;
+        padding: 14px 25px;
+    }
+}
+
+/* Large Screens (769px and above) */
+@media screen and (min-width: 769px) {
+    body {
+        padding-top: 100px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .project-details {
+        margin: 100px auto 30px;
+        padding: 30px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 2em;
+    }
+
+    .project-details ul {
+        font-size: 1.1em;
+    }
+
+    .demo-button-box a {
+        font-size: 1.2em;
+        padding: 14px 28px;
+    }
+}
+
+
 /* Animations */
 @keyframes fadeIn {
     0% {
