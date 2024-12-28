@@ -110,6 +110,9 @@ section{
     padding-right: 30px;
 }
 
+
+
+
 /* About Section */
 .about-section {
     padding-top: 60px; /* Ensure space below the fixed header */
@@ -196,6 +199,36 @@ section{
 }
 
 /* Ensure responsiveness */
+@media (max-width: 1200px) {
+    .content {
+        flex-direction: row; /* Cards in a row for medium screens */
+    }
+
+    .aboutcard {
+        width: 45%; /* Cards take 45% width */
+        padding: 25px; /* Slightly less padding for larger screens */
+    }
+
+    .about-image {
+        width: 30%; /* Image takes 30% of width */
+    }
+}
+
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: row; /* Keep cards in a row on medium screens */
+    }
+
+    .aboutcard {
+        width: 48%; /* Cards take 48% width */
+        padding: 20px;
+    }
+
+    .about-image {
+        width: 33%; /* Image takes 33% of width */
+    }
+}
+
 @media (max-width: 768px) {
     .content {
         flex-direction: column; /* Stack vertically on small screens */
@@ -219,6 +252,85 @@ section{
         font-size: 2em;
     }
 }
+
+/* Added responsiveness for small screens starting at 320px */
+@media (max-width: 611px) {
+    .title {
+        font-size: 1.6em; /* Reduce font size for very small screens */
+        padding: 10px 0; /* Reduce padding for better fitting */
+    }
+
+    .content {
+        flex-direction: column; /* Stack vertically */
+        gap: 10px; /* Reduce the gap between cards */
+    }
+
+    .aboutcard {
+        width: 100%; /* Ensure cards take up full width */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .about-image {
+        width: 100%; /* Ensure the image takes the full width of its container */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .info h3 {
+        font-size: 1.4em; /* Smaller font size for headings */
+    }
+
+    .info p {
+        font-size: 0.9em; /* Slightly smaller font for text */
+    }
+}
+
+@media (max-width: 320px) {
+    .title {
+        font-size: 1.5em; /* Further reduce font size for very small screens */
+        padding: 5px 0; /* Minimize padding */
+    }
+
+    .content {
+        flex-direction: column; /* Stack vertically on very small screens */
+        gap: 5px; /* Minimize the gap between cards */
+    }
+
+    .aboutcard {
+        width: 100%; /* Ensure cards are full-width */
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .about-image {
+        width: 100%; /* Make image take the full width */
+        margin-left: 0;
+    }
+
+    .info h3 {
+        font-size: 1.2em; /* Further reduce font size */
+    }
+
+    .info p {
+        font-size: 0.8em; /* Even smaller font for text */
+    }
+}
+
+/* Adjust layout for mobile screens to place image above content */
+@media (max-width: 768px) {
+    .aboutcard {
+        flex-direction: column; /* Stack image above text on mobile screens */
+    }
+
+    .about-image {
+        width: 100%; /* Image takes full width on mobile */
+        margin-left: 0;
+    }
+
+    .info {
+        padding: 10px; /* Padding inside content for mobile */
+    }
+}
+
+
 
 /*services section*/
 .title{
