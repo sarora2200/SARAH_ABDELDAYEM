@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
     color: #333;
     background: #e8f5e9; /* Light green background */
-    padding-top: 60px;
+    padding-top: 100px; /* Adjust padding for header height */
     animation: backgroundPulse 5s infinite alternate;
 }
 
@@ -115,6 +115,22 @@ header h1 {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Add extra padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 2em; /* Adjust header title size */
+    }
+
+    .project-details {
+        margin: 120px auto 30px; /* Ensure proper spacing */
+        padding: 20px;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     0% {
@@ -177,3 +193,4 @@ header h1 {
         background-color: #e1f5e1;
     }
 }
+
