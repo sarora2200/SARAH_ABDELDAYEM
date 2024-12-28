@@ -110,7 +110,6 @@ section{
     padding-right: 30px;
 }
 
-
 /* About Section */
 .about-section {
     padding-top: 60px; /* Ensure space below the fixed header */
@@ -126,7 +125,7 @@ section{
     color: #d288e0;
     font-size: 2.5em;
     font-weight: 800;
-    margin-bottom: 40px;
+    margin-bottom: 1px; /* Further reduce bottom margin to narrow space */
     text-transform: uppercase;
     padding: 20px 0; /* Add padding inside the title section */
 }
@@ -138,7 +137,7 @@ section{
     width: 100%; /* Ensure content spans the full width */
     justify-content: center; /* Center-align the cards horizontally */
     gap: 20px; /* Add spacing between the cards */
-    margin-top: 30px; /* Ensure some spacing above the cards */
+    margin-top: 0; /* Remove any extra top margin to reduce space */
 }
 
 /* Full-Width Card */
@@ -150,8 +149,8 @@ section{
     align-items: center; /* Align items (image and text) in the center vertically */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Add some radius for rounded corners */
-    padding: 30px; /* Adjust padding for spacing inside the card */
-    margin: 15px; /* Margin for separation */
+    padding: 20px; /* Reduce padding to narrow space inside the card */
+    margin: 10px; /* Reduced margin to bring the card closer */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -220,8 +219,6 @@ section{
         font-size: 2em;
     }
 }
-
-
 
 /*services section*/
 .title{
