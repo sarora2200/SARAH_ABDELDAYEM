@@ -112,35 +112,36 @@ section{
 
 
 
-
 /* About Section */
 .about-section {
-    padding-top: 60px; /* Ensure space below the fixed header */
+    padding-top: 70px; /* Increase space below the fixed header to make it wider */
     background-color: #f9f9f9;
     width: 100%; /* Ensure full width */
     box-sizing: border-box; /* Include padding and border in width calculation */
     margin: 0;
 }
 
-.title {
+.about-title {
     display: flex;
     justify-content: center;
     color: #d288e0;
     font-size: 2.5em;
     font-weight: 800;
-    margin-bottom: 1px; /* Further reduce bottom margin to narrow space */
+    margin-bottom: 3px; /* Minimized space below the title */
+    margin-top: 5px; /* Increased space above the title for more noticeable gap from header */
     text-transform: uppercase;
-    padding: 20px 0; /* Add padding inside the title section */
+    padding: 0; /* Reduced padding for a more compact look */
 }
 
-.content {
+.about-content {
     display: flex;
     flex-direction: row; /* Cards will be arranged horizontally */
     flex-wrap: wrap; /* Allow wrapping to the next line if there isn't enough space */
     width: 100%; /* Ensure content spans the full width */
     justify-content: center; /* Center-align the cards horizontally */
     gap: 20px; /* Add spacing between the cards */
-    margin-top: 0; /* Remove any extra top margin to reduce space */
+    margin-top: 0; /* Removed any extra top margin */
+    padding-top: 0; /* Ensure no extra space above the content */
 }
 
 /* Full-Width Card */
@@ -198,9 +199,32 @@ section{
     margin: 10px 0;
 }
 
-/* Ensure responsiveness */
+/* Button Styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding for button size */
+    font-size: 1em; /* Button text size */
+    color: #ffffff; /* White text */
+    background-color: #d288e0; /* Match the theme color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Button shadow */
+    font-weight: 600; /* Slightly bold text */
+    margin-top: 20px; /* Add space above the button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.button:hover {
+    background-color: #b56dc2; /* Darker shade on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1200px) {
-    .content {
+    .about-content {
         flex-direction: row; /* Cards in a row for medium screens */
     }
 
@@ -215,7 +239,7 @@ section{
 }
 
 @media (max-width: 1024px) {
-    .content {
+    .about-content {
         flex-direction: row; /* Keep cards in a row on medium screens */
     }
 
@@ -230,7 +254,7 @@ section{
 }
 
 @media (max-width: 768px) {
-    .content {
+    .about-content {
         flex-direction: column; /* Stack vertically on small screens */
     }
 
@@ -248,19 +272,23 @@ section{
         max-width: 100%; /* Ensure the image is responsive */
     }
 
-    .title {
+    .about-title {
         font-size: 2em;
+    }
+
+    .button {
+        font-size: 0.9em; /* Slightly smaller text for smaller screens */
+        padding: 8px 16px; /* Adjust padding */
     }
 }
 
-/* Added responsiveness for small screens starting at 320px */
 @media (max-width: 611px) {
-    .title {
+    .about-title {
         font-size: 1.6em; /* Reduce font size for very small screens */
         padding: 10px 0; /* Reduce padding for better fitting */
     }
 
-    .content {
+    .about-content {
         flex-direction: column; /* Stack vertically */
         gap: 10px; /* Reduce the gap between cards */
     }
@@ -282,15 +310,21 @@ section{
     .info p {
         font-size: 0.9em; /* Slightly smaller font for text */
     }
+
+    .button {
+        font-size: 0.8em; /* Smaller text for very small screens */
+        padding: 6px 12px; /* Reduce padding for compact look */
+        margin-top: 15px; /* Reduce top margin */
+    }
 }
 
 @media (max-width: 320px) {
-    .title {
+    .about-title {
         font-size: 1.5em; /* Further reduce font size for very small screens */
         padding: 5px 0; /* Minimize padding */
     }
 
-    .content {
+    .about-content {
         flex-direction: column; /* Stack vertically on very small screens */
         gap: 5px; /* Minimize the gap between cards */
     }
@@ -314,21 +348,7 @@ section{
     }
 }
 
-/* Adjust layout for mobile screens to place image above content */
-@media (max-width: 768px) {
-    .aboutcard {
-        flex-direction: column; /* Stack image above text on mobile screens */
-    }
 
-    .about-image {
-        width: 100%; /* Image takes full width on mobile */
-        margin-left: 0;
-    }
-
-    .info {
-        padding: 10px; /* Padding inside content for mobile */
-    }
-}
 
 
 
@@ -579,19 +599,54 @@ section{
 
 /* Contact Section */
 .contact-section {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light grey background */
     padding: 60px 20px;
     text-align: center;
-    padding-top: 95px; /* To ensure space below the header (adjust this value if needed) */
+    padding-top: 95px; /* To ensure space below the header */
 }
 
 .contact-section .title {
-    color: #d288e0;
-    font-size: 2.5em;
-    font-weight: 800;
+    font-size: 3.2em; /* Slightly smaller for a more relaxed appearance */
+    font-weight: 700; /* Bold enough to be noticeable, but not too heavy */
     margin-bottom: 40px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2px; /* Spacing for a clean look */
+    color: #d288e0; /* Soft purple for a relaxing tone */
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1); /* Soft and subtle shadow */
+    animation: fadeIn 1.5s ease-in-out; /* Subtle fade-in animation */
+}
+
+.contact-section .title::before {
+    content: " "; /* Add a subtle glow effect behind the title */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(210, 136, 224, 0.2); /* Light, soft glow */
+    z-index: -1; /* Ensure it's behind the text */
+    filter: blur(6px);
+}
+
+.contact-section .title:hover {
+    transform: translateY(-3px) scale(1.02); /* Slight lift on hover */
+    color: #d288e0; /* Keep the same color on hover */
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.12); /* Enhance the soft shadow slightly on hover */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .contact-section .contact-content {
@@ -620,7 +675,7 @@ section{
 
 .contact-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Softer hover shadow */
     background-color: #f9f9f9;  /* Light hover effect */
 }
 
@@ -628,7 +683,7 @@ section{
     font-size: 3em;
     color: #d288e0;
     padding: 20px;
-    background-color: #f4f4f4;  /* Light background for the icon */
+    background-color: #f9f9f9;  /* Light background for the icon */
     border-radius: 50%;
     margin-bottom: 20px; /* Space between icon and text */
 }
@@ -670,10 +725,15 @@ section{
     }
 
     .contact-section .title {
-        font-size: 2em;
+        font-size: 2.5em; /* Slightly smaller title on mobile */
     }
 }
 
+@media (max-width: 480px) {
+    .contact-section .title {
+        font-size: 2em; /* Further reduce font size for very small screens */
+    }
+}
 
 /* footer section */
 
