@@ -285,11 +285,14 @@ section{
     display: flex;
     justify-content: center;
     color: #d288e0;
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-weight: 800;
-    margin-bottom: 30px;
-}
-
+    margin-bottom: 3px; /* Minimized space below the title */
+    margin-top: 5px; /* Increased space above the title */
+    text-transform: uppercase;
+    padding: 0; /* Reduced padding for a compact*/
+    }
+    
 .content{
     display: flex;
     justify-content: center;
