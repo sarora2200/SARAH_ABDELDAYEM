@@ -111,9 +111,10 @@ section{
 }
 
 
+
 /* About Section */
 .about-section {
-    padding-top: 70px; /* Ensure space below the fixed header */
+    padding-top: 30px; /* Increase space below the fixed header to make it wider */
     background-color: #f9f9f9;
     width: 100%; /* Ensure full width */
     box-sizing: border-box; /* Include padding and border in width calculation */
@@ -127,30 +128,29 @@ section{
     font-size: 2.5em;
     font-weight: 800;
     margin-bottom: 3px; /* Minimized space below the title */
-    margin-top: 5px; /* Increased space above the title */
+    margin-top: 5px; /* Increased space above the title for more noticeable gap from header */
     text-transform: uppercase;
-    padding: 0; /* Reduced padding for a compact look */
+    padding: 0; /* Reduced padding for a more compact look */
 }
 
 .about-content {
     display: flex;
-    flex-direction: row; /* Cards arranged horizontally by default */
+    flex-direction: row; /* Cards will be arranged horizontally */
     flex-wrap: wrap; /* Allow wrapping to the next line if there isn't enough space */
     width: 100%; /* Ensure content spans the full width */
     justify-content: center; /* Center-align the cards horizontally */
     gap: 20px; /* Add spacing between the cards */
-    margin-top: 0; /* Remove extra top margin */
+    margin-top: 0; /* Removed any extra top margin */
     padding-top: 0; /* Ensure no extra space above the content */
 }
 
 /* Full-Width Card */
-.aboutcard {
+.about-card {
     background-color: #ffffff;
     width: 100%; /* Make the card span the full width of the content */
     max-width: 100%; /* Remove any max-width restriction */
     display: flex;
-    flex-direction: column; /* Stack content vertically on mobile */
-    align-items: center; /* Center-align items */
+    align-items: center; /* Align items (image and text) in the center vertically */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Add some radius for rounded corners */
     padding: 20px; /* Reduce padding to narrow space inside the card */
@@ -165,17 +165,17 @@ section{
 
 /* Image Styling */
 .about-image {
-    width: 100%; /* Make the image take full width on small screens */
-    margin: 0 auto 15px; /* Center the image and add spacing below it */
-    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin-left: 20px; /* Add margin to space out the image from text */
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 35%; /* Set the image container width to 35% */
 }
 
 .about-image img {
     border-radius: 10px;
-    width: 100%; /* Ensure the image takes up the full width */
+    width: 100%; /* Ensure image takes up the full width of the container */
     height: auto;
     object-fit: cover; /* Maintain the aspect ratio of the image */
-    max-width: 100%;
+    max-width: 100%; /* Ensure image doesn't exceed the container width */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: block;
 }
@@ -183,7 +183,6 @@ section{
 /* Text Styling */
 .info {
     flex: 1; /* Ensure text takes up the remaining space */
-    text-align: center; /* Center the text on mobile */
 }
 
 .info h3 {
@@ -203,104 +202,245 @@ section{
 /* Button Styling */
 .button {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #ffffff;
-    background-color: #d288e0;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    font-weight: 600;
-    margin-top: 20px;
-    cursor: pointer;
+    padding: 10px 20px; /* Adjust padding for button size */
+    font-size: 1em; /* Button text size */
+    color: #ffffff; /* White text */
+    background-color: #d288e0; /* Match the theme color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Button shadow */
+    font-weight: 600; /* Slightly bold text */
+    margin-top: 20px; /* Add space above the button */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 .button:hover {
-    background-color: #b56dc2;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
+    background-color: #b56dc2; /* Darker shade on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Subtle lift on hover */
 }
 
-/* Responsive Adjustments for Mobile */
-@media (max-width: 611px) {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 1.5em; /* Slightly larger than on 320px for better readability */
+        padding: 8px 0; /* Adjust padding for readability */
+    }
+
     .about-content {
-        flex-direction: column; /* Stack content vertically */
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: 10px; /* Slightly larger gap for better spacing */
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards are full-width */
+        padding: 15px; /* Slightly larger padding */
+        box-sizing: border-box; /* Ensure padding is included within the card's width */
+    }
+
+    .about-image {
+        width: 100%; /* Make image take the full width of the card */
+        margin: 0 0 15px 0; /* Margin at the bottom for spacing */
+    }
+
+    .about-image img {
+        width: 100%; /* Ensure the image fills the width of its container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the container */
+    }
+
+    .info h3 {
+        font-size: 1.4em; /* Slightly larger font size for better readability */
+    }
+
+    .info p {
+        font-size: 1em; /* Increase text size for better legibility */
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-title {
+        font-size: 1.6em; /* Slightly larger title for better readability */
+        padding: 10px 0; /* Adjust padding for readability */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically on medium screens */
+        gap: 15px; /* More space between cards */
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards are full-width */
+        padding: 20px; /* Slightly larger padding */
+        box-sizing: border-box;
+    }
+
+    .about-image {
+        width: 100%; /* Image should take up the full width */
+        margin: 0 0 20px 0; /* Add bottom margin to separate content from image */
+    }
+
+    .about-image img {
+        width: 100%; /* Ensure image fills the container */
+        height: auto; /* Keep aspect ratio */
+        object-fit: cover; /* Ensure image covers its space */
+    }
+
+    .info h3 {
+        font-size: 1.5em; /* Increase heading font size */
+    }
+
+    .info p {
+        font-size: 1.1em; /* Larger text for better legibility */
+    }
+}
+
+
+@media (max-width: 611px) {
+    .about-title {
+        font-size: 1.6em; /* Reduce font size for very small screens */
+        padding: 10px 0; /* Reduce padding for better fitting */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically */
         gap: 10px; /* Reduce the gap between cards */
     }
 
-    .aboutcard {
+    .about-card {
         width: 100%; /* Ensure cards take up full width */
         padding: 15px; /* Reduce padding */
     }
 
     .about-image {
-        width: 100%; /* Image takes full width */
+        width: 100%; /* Ensure the image takes the full width of its container */
         margin-left: 0; /* Remove left margin */
     }
 
+    .about-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Make sure the image adapts to the screen size */
+    }
+
     .info h3 {
-        font-size: 1.4em; /* Adjust font size */
+        font-size: 1.4em; /* Smaller font size for headings */
     }
 
     .info p {
-        font-size: 0.9em; /* Adjust text size */
+        font-size: 0.9em; /* Slightly smaller font for text */
     }
 
     .button {
-        font-size: 0.9em; /* Adjust button size */
-        padding: 8px 16px;
+        font-size: 0.8em; /* Smaller text for very small screens */
+        padding: 6px 12px; /* Reduce padding for compact look */
+        margin-top: 15px; /* Reduce top margin */
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
     .about-title {
-        font-size: 1.5em; /* Adjust title size */
+        font-size: 1.4em; /* Slightly larger than 320px for better readability */
+        padding: 6px 0; /* Minimize padding */
     }
 
     .about-content {
-        gap: 5px; /* Further reduce the gap between cards */
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: 8px; /* Adjust gap slightly for better spacing */
     }
 
-    .aboutcard {
-        padding: 10px; /* Reduce padding */
+    .about-card {
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards are full-width */
+        padding: 12px; /* Reduce padding for better fitting */
+        box-sizing: border-box; /* Ensure padding is included in the card's width */
+    }
+
+    .about-image {
+        width: 100%; /* Make image take the full width of the card */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 12px; /* Adjust bottom margin for spacing */
+        overflow: hidden; /* Ensure no overflow outside of the card */
+    }
+
+    .about-image img {
+        width: 100%; /* Ensure the image fills the width of its container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
     }
 
     .info h3 {
-        font-size: 1.2em; /* Adjust heading size */
+        font-size: 1.3em; /* Slightly larger font size for better readability */
     }
 
     .info p {
-        font-size: 0.8em; /* Adjust paragraph size */
+        font-size: 0.9em; /* Increase text size slightly for better legibility */
     }
 }
 
+
+
+
+@media (max-width: 320px) {
+    .about-title {
+        font-size: 1.3em; /* Further reduce font size */
+        padding: 5px 0; /* Minimize padding */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically on very small screens */
+        gap: 5px; /* Minimize the gap between cards */
+    }
+
+    .about-card {
+        flex-direction: column; /* Image above content */
+        width: 100%; /* Ensure cards are full-width */
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .about-image {
+        width: 100%; /* Make image take the full width */
+        margin: 0 0 15px 0;
+    }
+
+    .info h3 {
+        font-size: 1.2em; /* Further reduce font size */
+    }
+
+    .info p {
+        font-size: 0.8em; /* Even smaller font for text */
+    }
+}
 
 
 
 
 /*services section*/
-.title{
+.title {
     display: flex;
     justify-content: center;
     color: #d288e0;
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: 800;
-    margin-bottom: 3px; /* Minimized space below the title */
-    margin-top: 5px; /* Increased space above the title */
-    text-transform: uppercase;
-    padding: 0; /* Reduced padding for a compact*/
-    }
-    
-.content{
+    margin-bottom: 30px;
+    margin-top: 50px; /* Add space above the title to stop it below the header */
+}
+
+.content {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.card{
+.card {
     background-color: #ffffff;
     width: 21.25em;
     box-shadow: 0 5px 25px rgba(1, 1, 1, 0.334);
@@ -314,27 +454,40 @@ section{
     height: auto; /* Maintain the aspect ratio */
 }
 
-
-.card:hover{
+.card:hover {
     transform: scale(1.1);
 }
 
-.icon{
+.icon {
     color: #d288e0;
     font-size: 7em;
     text-align: center;
 }
 
-.info{
+.info {
     text-align: center;
 }
 
-.info h3{
+.info h3 {
     color: #d288e0;
     font-size: 1.2em;
     font-weight: 700;
     margin: 10px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-card {
+        width: 100%; /* Make cards full-width on smaller screens */
+    }
+
+    .services-section .title {
+        font-size: 2em;
+        margin-top: 30px; /* Adjust the space above the title for small screens */
+    }
+}
+
+
 
 /* Projects Section */
 .projects-section {
