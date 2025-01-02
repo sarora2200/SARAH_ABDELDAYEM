@@ -1,0 +1,304 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Header Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f3e5f5; /* Light purple background */
+    padding-top: 100px; /* Adjust padding for header height */
+    animation: backgroundPulse 5s infinite alternate;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #9c27b0, #e1bee7); /* Purple gradient */
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1s ease-in-out;
+}
+
+/* Header Title Styling */
+header h1 {
+    font-size: 2.5em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Project Details Section */
+.project-details {
+    max-width: 900px;
+    margin: 100px auto 30px;
+    padding: 30px;
+    background: #ffffff; /* White background for the project section */
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Project Section Headings */
+.project-details h2, .project-details h3 {
+    color: #9c27b0; /* Purple color for headings */
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #e1bee7;
+    padding-bottom: 8px;
+    display: inline-block;
+    animation: popIn 1s ease-in-out;
+}
+
+/* List Styling */
+.project-details ul {
+    list-style: none;
+    margin: 20px 0 25px;
+    padding: 0;
+    font-size: 1.1em;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+/* List Items Styling */
+.project-details li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.8;
+    color: #555;
+    animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+.project-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #9c27b0;
+    font-size: 1.5em;
+}
+
+/* Demo Button Styling */
+.demo-button-box {
+    margin-top: 30px;
+    padding: 0;
+    text-align: left; /* Align the button to the left */
+}
+
+/* Styling for the link (button) inside the demo box */
+.demo-button-box a {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(to right, #9c27b0, #e1bee7); /* Purple gradient button */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.2em;
+}
+
+.demo-button-box a:hover {
+    background: linear-gradient(to right, #9c27b0, #e1bee7); /* Hover effect for the button */
+    transform: scale(1.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Base Styles (default for large screens) */
+body {
+    padding-top: 100px; /* Default padding for fixed header */
+}
+
+header h1 {
+    font-size: 2.5em; /* Default header title size */
+}
+
+.project-details {
+    max-width: 900px;
+    margin: 100px auto 30px;
+    padding: 30px;
+}
+
+.project-details h2, .project-details h3 {
+    font-size: 2em;
+}
+
+.project-details ul {
+    font-size: 1.1em;
+}
+
+.demo-button-box a {
+    font-size: 1.2em;
+    padding: 14px 28px;
+}
+
+/* Small Mobile Screens (320px - 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding-top: 120px; /* Extra padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 1.8em;
+        letter-spacing: 1px;
+    }
+
+    /* Add a new class to the first section to avoid overlap */
+    .first-heading {
+        margin-top: calc(60px + 30px); /* Height of the header + extra spacing */
+        text-align: center;
+        color: #9c27b0;
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    .project-details {
+        margin: 140px auto 20px; /* Adjust the margin for smaller screens */
+        padding: 15px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 1.5em;
+    }
+
+    .project-details ul {
+        font-size: 1em;
+    }
+
+    .demo-button-box a {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
+/* Medium Screens (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .project-details {
+        margin: 120px auto 30px;
+        padding: 20px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 1.8em;
+    }
+
+    .project-details ul {
+        font-size: 1.05em;
+    }
+
+    .demo-button-box a {
+        font-size: 1.1em;
+        padding: 14px 25px;
+    }
+}
+
+/* Large Screens (769px and above) */
+@media screen and (min-width: 769px) {
+    body {
+        padding-top: 100px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .project-details {
+        margin: 100px auto 30px;
+        padding: 30px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 2em;
+    }
+
+    .project-details ul {
+        font-size: 1.1em;
+    }
+
+    .demo-button-box a {
+        font-size: 1.2em;
+        padding: 14px 28px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundPulse {
+    0% {
+        background-color: #f3e5f5;
+    }
+    100% {
+        background-color: #e1bee7;
+    }
+}
