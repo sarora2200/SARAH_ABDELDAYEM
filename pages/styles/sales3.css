@@ -1,0 +1,216 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f7f7f7; /* Soft light background */
+    animation: backgroundPulse 6s ease-in-out infinite alternate;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #FFCC81, #F6A98A); /* Warm, gentle tones */
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    animation: slideDown 1.5s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 0.7s;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Project Details Section */
+.project-details {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 35px;
+    background: linear-gradient(to right, #fefefe, #f5f5f5); /* Very light gradient */
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for a soft lift effect */
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.project-details h2 {
+    color: #FFCC81;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #FFCC81;
+    padding-bottom: 10px;
+    display: inline-block;
+    transform: scale(0.9);
+    animation: popIn 1.2s ease-in-out;
+}
+
+.project-details h3 {
+    color: #97C4E9;
+    font-size: 1.9em;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateX(-20px);
+    animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.project-details p {
+    margin-bottom: 25px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.project-details ul {
+    list-style: none;
+    margin: 25px 0 30px;
+    padding: 0;
+    font-size: 1.1em;
+}
+
+.project-details li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.8;
+    color: #555;
+    animation: slideInFromRight 1.2s ease-out forwards;
+    animation-delay: calc(0.2s * var(--index));
+}
+
+.project-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #F6A98A;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Links */
+.project-details a {
+    color: #F6A98A;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.project-details a:hover {
+    color: #FFCC81;
+    transform: scale(1.1);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle glow effect */
+}
+
+/* Demo Button */
+.project-details p a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: linear-gradient(to right, #FFCC81, #F6A98A);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.project-details p a:hover {
+    background: linear-gradient(to right, #F6A98A, #FFCC81);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Smooth hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .project-details {
+        padding: 25px;
+    }
+
+    .project-details h2, .project-details h3 {
+        font-size: 1.7em;
+    }
+
+    .project-details p a {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundPulse {
+    0% {
+        background-color: #f7f7f7;
+    }
+    100% {
+        background-color: #f3f3f3;
+    }
+}
