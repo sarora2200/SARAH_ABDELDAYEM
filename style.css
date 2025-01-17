@@ -201,7 +201,7 @@ section {
 /* About Section */
 .about-section {
     padding-top: 0px; /* Reduce padding to minimize the gap */
-    background-color: #f9f9f9;
+    background-color: linear-gradient(145deg, #fbfbfb, #f9f9f9); /* Soft gradient for modern appeal */
     width: 100%;
     box-sizing: border-box;
     padding: 20px; /* Adjust overall padding for content */
@@ -220,8 +220,7 @@ section {
     margin-bottom: 20px; /* Control spacing below the title */
 }
 
-
-
+/* About Content */
 .about-content {
     display: flex;
     flex-direction: row; /* Cards will be arranged horizontally */
@@ -240,11 +239,13 @@ section {
     max-width: 100%; /* Remove any max-width restriction */
     display: flex;
     align-items: center; /* Align items (image and text) in the center vertically */
+    justify-content: center; /* Center content horizontally */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Add some radius for rounded corners */
     padding: 20px; /* Reduce padding to narrow space inside the card */
     margin: 10px; /* Reduced margin to bring the card closer */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center the text inside the card */
 }
 
 .aboutcard:hover {
@@ -270,22 +271,26 @@ section {
 }
 
 /* Text Styling */
-.info {
+.about-info {
     flex: 1; /* Ensure text takes up the remaining space */
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center align the content */
+    justify-content: center; /* Vertically center the content */
 }
 
-.info h3 {
-    color: #d288e0;
-    font-size: 1.8em;
+.about-info h3 {
+    color: #cc67c6c7;
+    font-size: 1.2em;
     font-weight: 700;
-    margin: 15px 0;
+    margin: 5px 0;
 }
 
-.info p {
+.about-info p {
     color: #333;
     font-size: 1em;
     line-height: 1.6;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 /* Button Styling */
@@ -342,11 +347,11 @@ section {
         object-fit: cover; /* Ensure the image covers the container */
     }
 
-    .info h3 {
+    .about-info h3 {
         font-size: 1.4em; /* Slightly larger font size for better readability */
     }
 
-    .info p {
+    .about-info p {
         font-size: 1em; /* Increase text size for better legibility */
     }
 }
@@ -381,11 +386,11 @@ section {
         object-fit: cover; /* Ensure image covers its space */
     }
 
-    .info h3 {
+    .about-info h3 {
         font-size: 1.5em; /* Increase heading font size */
     }
 
-    .info p {
+    .about-info p {
         font-size: 1.1em; /* Larger text for better legibility */
     }
 }
@@ -418,11 +423,11 @@ section {
         object-fit: cover; /* Make sure the image adapts to the screen size */
     }
 
-    .info h3 {
+    .about-info h3 {
         font-size: 1.4em; /* Smaller font size for headings */
     }
 
-    .info p {
+    .about-info p {
         font-size: 0.9em; /* Slightly smaller font for text */
     }
 
@@ -465,17 +470,14 @@ section {
         object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
     }
 
-    .info h3 {
+    .about-info h3 {
         font-size: 1.3em; /* Slightly larger font size for better readability */
     }
 
-    .info p {
+    .about-info p {
         font-size: 0.9em; /* Increase text size slightly for better legibility */
     }
 }
-
-
-
 
 @media (max-width: 320px) {
     .about-title {
@@ -489,106 +491,206 @@ section {
     }
 
     .about-card {
-        flex-direction: column; /* Image above content */
-        width: 100%; /* Ensure cards are full-width */
-        padding: 10px; /* Further reduce padding */
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards take up full width */
+        padding: 10px; /* Minimize padding */
+        box-sizing: border-box; /* Adjust for border box sizing */
     }
 
     .about-image {
-        width: 100%; /* Make image take the full width */
-        margin: 0 0 15px 0;
+        width: 100%; /* Image should take up the full width */
+        margin-bottom: 10px; /* Add bottom margin for separation */
     }
 
-    .info h3 {
-        font-size: 1.2em; /* Further reduce font size */
+    .about-info h3 {
+        font-size: 1.2em; /* Reduce font size for very small screens */
     }
 
-    .info p {
-        font-size: 0.8em; /* Even smaller font for text */
+    .about-info p {
+        font-size: 0.8em; /* Adjust text size for better readability on small screens */
+    }
+
+    .button {
+        font-size: 0.7em; /* Smaller font size for the button */
+        padding: 5px 10px; /* Reduced padding for the button */
     }
 }
 
 
-/*services section*/
-.title {
+
+/* Services Section */
+.services-section {
+    background: linear-gradient(145deg, #fbfbfb, #f9f9f9); /* Soft gradient for modern appeal */
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow to elevate the section */
+    border-radius: 15px; /* Rounded corners for the section */
+}
+
+/* Title Styling */
+.services-section .title {
     display: flex;
     justify-content: center;
-    color: #d288e0;
-    font-size: 2.2em;
+    color: #cc67c6c7;
+    font-size: 2.5em; /* Increased title size for better visibility */
     font-weight: 800;
-    margin-bottom: 30px;
-    margin-top: 50px; /* Add space above the title to stop it below the header */
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    margin-top: 50px; /* Space above the title */
+    text-transform: uppercase; /* Uppercase title for a more polished look */
+    letter-spacing: 1.5px; /* Added letter spacing for a more refined look */
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Adds shadow for emphasis */
+    transform: translateY(0); /* Initial position */
 }
 
-.content {
+/* Hover effect for title */
+.services-section .title:hover {
+    color: #9b4d96; /* Change text color on hover */
+    transform: translateY(-5px); /* Lift the title on hover */
+}
+
+/* Content Container */
+.content-service {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    justify-content: space-evenly; /* Spread cards evenly across the screen */
     flex-wrap: wrap;
+    gap: 20px; /* Uniform spacing between cards */
+    padding: 0 15px; /* Ensure padding around the content */
+    align-items: flex-start; /* Align items at the top */
 }
 
+/* Card Design */
 .card {
     background-color: #ffffff;
-    width: 21.25em;
-    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.334);
-    border-radius: 10px;
+    width: calc(33.33% - 20px); /* Make three cards per row, with spacing between them */
+    height: 380px; /* Fixed height to make all cards the same length */
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.1); /* Lighter shadow for a cleaner look */
+    border-radius: 15px; /* Rounded corners for a softer look */
     padding: 25px;
-    margin: 15px auto;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover transition */
+    overflow: hidden; /* Ensure no content overflow */
 }
 
-.logo-image {
-    width: 50px; /* Adjust the width as needed */
-    height: auto; /* Maintain the aspect ratio */
-}
-
+/* Hover Effect for Card */
 .card:hover {
-    transform: scale(1.1);
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    background-color: #f9f9f9; /* Slight color change on hover */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
+/* Icon Style */
 .icon {
     color: #d288e0;
-    font-size: 7em;
-    text-align: center;
+    font-size: 4.5em; /* Slightly larger icon for better visibility */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for color change */
 }
 
+/* Icon Hover Effect */
+.card:hover .icon {
+    transform: scale(1.2); /* Slight enlargement of icon on hover */
+    color: #d288e0; /* Change icon color on hover */
+}
+
+/* Info Section Inside Card */
 .info {
-    text-align: center;
+    flex-grow: 1; /* Allow info section to grow and fill remaining space */
+    padding-top: 10px;
 }
 
+/* Card Heading */
 .info h3 {
     color: #d288e0;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 700;
-    margin: 10px;
+    margin: 10px 0;
+    text-transform: uppercase; /* Make headings more striking */
+    transition: color 0.3s ease;
+}
+
+/* Card Description */
+.info p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 10px; /* Padding at the bottom for spacing */
+    font-family: 'Arial', sans-serif; /* Make description font more readable */
+    transition: color 0.3s ease; /* Smooth transition for text color */
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 20px); /* 2 cards per row on medium screens */
+    }
+
+    .services-section .title {
+        font-size: 2.2em;
+    }
+}
+
 @media (max-width: 768px) {
-    .service-card {
-        width: 100%; /* Make cards full-width on smaller screens */
+    .card {
+        width: 100%; /* Full-width cards on smaller screens */
+        height: auto; /* Adjust card height dynamically */
     }
 
     .services-section .title {
         font-size: 2em;
-        margin-top: 30px; /* Adjust the space above the title for small screens */
+        margin-top: 30px;
     }
 }
 
 
+
+
+
+
+
 /* Projects Section */
 .projects-section {
-    background-color: #f4f4f4;
-    padding: 60px 20px;
+    background: linear-gradient(145deg, #fbfbfb, #f9f9f9); /* Soft gradient for modern appeal */
+    padding: 100px 20px;
     text-align: center;
-    padding-top: 90px; /* To ensure space below the header (adjust this value if needed) */
-    position: relative; /* Add relative positioning to parent */
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow to elevate the section */
+    border-radius: 15px; /* Rounded corners for the section */
 }
 
+/* Title Styling */
 .projects-section .title {
-    color: #d288e0;
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    color: #cc67c6c7;
+    font-size: 2.5em; /* Increased title size for better visibility */
+    font-weight: 800;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    margin-top: 20px; /* Space above the title */
+    text-transform: uppercase; /* Uppercase title for a more polished look */
+    letter-spacing: 1.5px; /* Added letter spacing for a more refined look */
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Adds shadow for emphasis */
+    transform: translateY(0); /* Initial position */
+}
+
+/* Hover effect for title */
+.projects-section .title:hover {
+    color: #9b4d96; /* Change text color on hover */
+    transform: translateY(-5px); /* Lift the title on hover */
 }
 
 .projects-content {
@@ -725,19 +827,36 @@ section {
 
 /* Achievements Section */
 .achievements-section {
-    background-color: #ffffff;
-    padding: 50px 0;
-    text-align: center; /* Center the title of the achievements section */
-    padding-top: 100px; /* To ensure space below the header (adjust this value if needed) */
+    background: linear-gradient(145deg, #fbfbfb, #f9f9f9); /* Soft gradient for modern appeal */
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow to elevate the section */
+    border-radius: 15px; /* Rounded corners for the section */
 }
 
+/* Title Styling */
 .achievements-section .title {
     display: flex;
-    justify-content: center; /* Center the title */
-    color: #d288e0;
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 40px;
+    justify-content: center;
+    color: #cc67c6c7;
+    font-size: 2.5em; /* Increased title size for better visibility */
+    font-weight: 800;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    margin-top: 50px; /* Space above the title */
+    text-transform: uppercase; /* Uppercase title for a more polished look */
+    letter-spacing: 1.5px; /* Added letter spacing for a more refined look */
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Adds shadow for emphasis */
+    transform: translateY(0); /* Initial position */
+}
+
+/* Hover effect for title */
+.achievements-section .title:hover {
+    color: #9b4d96; /* Change text color on hover */
+    transform: translateY(-5px); /* Lift the title on hover */
 }
 
 .achievements-section .achievements-content {
@@ -793,43 +912,43 @@ section {
 
 /* Contact Section */
 .contact-section {
-    background-color: #f4f4f4; /* Light grey background */
-    padding: 60px 20px;
+    background-color: linear-gradient(145deg, #f3f4f3, #f9f9f9); /* Soft gradient for modern appeal */;
+    padding: 80px 20px;
     text-align: center;
-    padding-top: 95px; /* To ensure space below the header */
+    padding-top: 95px;
 }
 
 .contact-section .title {
-    font-size: 3.2em; /* Slightly smaller for a more relaxed appearance */
-    font-weight: 700; /* Bold enough to be noticeable, but not too heavy */
+    font-size: 3.2em;
+    font-weight: 700;
     margin-bottom: 40px;
     text-transform: uppercase;
-    letter-spacing: 2px; /* Spacing for a clean look */
-    color: #d288e0; /* Soft purple for a relaxing tone */
+    letter-spacing: 2px;
+    color: #cc67c6c7; /* Rich purple color */
     position: relative;
     display: inline-block;
     padding: 5px 0;
-    transition: all 0.3s ease; /* Smooth transition for hover */
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1); /* Soft and subtle shadow */
-    animation: fadeIn 1.5s ease-in-out; /* Subtle fade-in animation */
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .contact-section .title::before {
-    content: " "; /* Add a subtle glow effect behind the title */
+    content: " ";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(210, 136, 224, 0.2); /* Light, soft glow */
-    z-index: -1; /* Ensure it's behind the text */
+    background: rgba(155, 77, 150, 0.2); /* Slight purple glow */
+    z-index: -1;
     filter: blur(6px);
 }
 
 .contact-section .title:hover {
-    transform: translateY(-3px) scale(1.02); /* Slight lift on hover */
-    color: #d288e0; /* Keep the same color on hover */
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.12); /* Enhance the soft shadow slightly on hover */
+    transform: translateY(-3px) scale(1.05);
+    color: #9b4d96; /* Keep vibrant purple on hover */
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
 }
 
 @keyframes fadeIn {
@@ -847,20 +966,20 @@ section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px; /* Spacing between cards */
+    gap: 30px;
     margin-top: 20px;
 }
 
 .contact-card {
     background-color: #ffffff;
     width: 270px;
-    max-width: 100%; /* Ensure responsiveness */
+    max-width: 100%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -869,22 +988,22 @@ section {
 
 .contact-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Softer hover shadow */
-    background-color: #f9f9f9;  /* Light hover effect */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Softer shadow on hover */
+    background-color: #f7f7f7;  /* Light grey hover effect */
 }
 
 .contact-card .icon {
     font-size: 3em;
-    color: #d288e0;
+    color: #cc67c6c7; /* Vibrant purple icon color */
     padding: 20px;
-    background-color: #f9f9f9;  /* Light background for the icon */
+    background-color: #f7f7f7; /* Soft background for the icon */
     border-radius: 50%;
-    margin-bottom: 20px; /* Space between icon and text */
+    margin-bottom: 20px;
 }
 
 .contact-card .info {
     padding: 10px;
-    text-align: center; /* Center the text */
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -901,7 +1020,7 @@ section {
 
 .contact-card .info p,
 .contact-card .info a {
-    color: #555;
+    color: #666;
     font-size: 1em;
     font-weight: 400;
     text-decoration: none;
@@ -910,32 +1029,15 @@ section {
 
 .contact-card .info a:hover {
     text-decoration: underline;
-    color: #d288e0; /* Highlight link on hover */
+    color: #9b4d96; /* Highlight links on hover */
 }
 
-@media (max-width: 768px) {
-    .contact-card {
-        width: 100%; /* Make cards full width on smaller screens */
-    }
-
-    .contact-section .title {
-        font-size: 2.5em; /* Slightly smaller title on mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-section .title {
-        font-size: 2em; /* Further reduce font size for very small screens */
-    }
-}
-
-/* footer section */
-
+/* Footer Section */
 .footer {
-    background-color: #333333e3;
+    background-color: #2c2c2c; /* Darker footer background */
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 15px 20px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -947,7 +1049,7 @@ section {
 }
 
 .footer-title span {
-    color: #9952a8 ;
+    color: #9b4d96; /* Use the same purple color for consistency */
 }
 
 .social-icons {
@@ -961,40 +1063,30 @@ section {
     margin: 0 10px;
 }
 
-@media (max-width:1023px){
-    header{
-        padding: 12px 20px;
+.footer .social-icons a:hover {
+    color: #9b4d96; /* Highlight social icons with purple on hover */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .contact-card {
+        width: 100%;
     }
 
-/* علشان اخلي الكلام اللي فوق كله علي خط واحد*/
-    .navigation {
-        justify-content: flex-start;
-    }
-
-    .navigation a{
-        padding-left: 10px;
-        font-size: 0.8em;
-        margin-right: 3px;
-    }
-
-    .logo{
-        font-size: 0.7em;
-    }
-
-    section{
-        padding: 40px 20px;
-    }
-
-    .main-content h2{
-        font-size: 1em;
-    }
-
-    .main-content h3{
-        font-size: 1.6em;
-    }
-
-    .content{
-        flex-direction: column;
-        align-items: center;
+    .contact-section .title {
+        font-size: 2.5em;
     }
 }
+
+@media (max-width: 768px) {
+    .contact-section .title {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section .title {
+        font-size: 1.8em;
+    }
+}
+
