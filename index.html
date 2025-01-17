@@ -157,10 +157,10 @@
     <!--بداية صفحة البروجكت-->
     <section class="projects-section" id="projects">
         <h2 class="title">Projects</h2>
-        <div class="projects-content">
-
-
-
+            <!-- Left Scroll Button -->
+        <button class="scroll-button left" aria-label="Scroll left" onclick="scrollProjects(-1)">&#8249;</button>
+        <div class="projects-content" id="projects-container">
+            <!-- Project Card 1: Sales Dashboard -->
             <!--كارت البروجكت-->
             <div class="project-card">
                 <div class="project-info">
@@ -226,26 +226,7 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Project Card 2: TIC TAC TOE --
-            <div class="project-card">
-                <div class="project-info">
-                    <p class="project-category"></p>
-                    <strong class="project-title">
-                        <span>TIC TAC TOE</span>
-                    </strong>
-                    <p class="project-description">
-                        A classic Tic Tac Toe game built with HTML, CSS, and JavaScript. Play against the computer or
-                        another player.
-                    </p>
-                    <a href="pages/tic-tac-toe-details.html" class="project-details-link" target="_blank">More Details</a>
-                </div>
-                <div class="project-sample">
-                    <a href="https://sarora2200.github.io/tic-tac-toe/" target="_blank">
-                        <img src="images/tic-tak-toe.png" alt="Tic Tac Toe">
-                    </a>
-                </div>
-            </div>
+            <!-- نهاية الكارت -->
 
             <!-- Project Card 3: Patients Visits Report -->
             <div class="project-card">
@@ -323,8 +304,29 @@
 
             <!-- نهاية الكارت -->
         </div>
+        <!-- Right Scroll Button -->
+        <button class="scroll-button right" aria-label="Scroll right" onclick="scrollProjects(1)">&#8250;</button>
+
+    <script>
+     function scrollProjects(direction) {
+    const container = document.getElementById('projects-container');
+    if (!container) {
+        console.error('Projects container not found!');
+        return;
+    }
+    const card = container.querySelector('.project-card');
+    if (!card) {
+        console.error('Project card not found!');
+        return;
+    }
+    const cardWidth = card.offsetWidth + 30; // Width of one card plus gap
+    container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
+    </script>
+
     </section>
     <!--نهاية صفحة البروجكت-->
+
 
     <!--بداية جزء الانجازات-->
     <section class="achievements-section" id="Achievements">

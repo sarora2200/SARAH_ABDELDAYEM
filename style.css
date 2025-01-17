@@ -488,13 +488,13 @@ section{
 }
 
 
-
 /* Projects Section */
 .projects-section {
     background-color: #f4f4f4;
     padding: 60px 20px;
     text-align: center;
     padding-top: 90px; /* To ensure space below the header (adjust this value if needed) */
+    position: relative; /* Add relative positioning to parent */
 }
 
 .projects-section .title {
@@ -506,22 +506,23 @@ section{
 
 .projects-content {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 20px;
+    justify-content: space-between; /* Distribute space evenly */
+    gap: 30px; /* Ensure the gap is uniform */
+    overflow-x: hidden; /* Hide horizontal scrolling */
+    width: 100%;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 .project-card {
     background-color: #ffffff;
-    width: 300px;
-    max-width: 100%;
+    width: calc((100% - 90px) / 4); /* Adjust width to fit four cards in a row */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 30px; /* Add space below each card */
     text-align: center; /* Center align content */
+    flex: 0 0 auto; /* Prevent cards from shrinking */
 }
 
 .project-card:hover {
@@ -572,6 +573,32 @@ section{
     opacity: 0.9;
 }
 
+/* Arrow buttons styling */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-button.left {
+    left: 10px;
+}
+
+.scroll-button.right {
+    right: 10px;
+}
+
 /* Styling for 'More Details' Link */
 .project-details-link {
     display: inline-block;
@@ -592,8 +619,12 @@ section{
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .projects-content {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
     .project-card {
-        width: 100%; /* Make cards full-width on smaller screens */
+        width: calc((100% - 30px) / 2); /* Show 2 cards at a time on smaller screens */
     }
 
     .projects-section .title {
@@ -602,15 +633,7 @@ section{
 }
 
 
-@media (max-width: 768px) {
-    .project-card {
-        width: 100%; /* Make cards full-width on smaller screens */
-    }
 
-    .projects-section .title {
-        font-size: 2em;
-    }
-}
 
 
 /* Achievements Section */
