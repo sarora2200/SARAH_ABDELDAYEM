@@ -10,7 +10,6 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for entire page */
     font-size: 16px; /* Base font size for better responsiveness */
 }
 
@@ -129,7 +128,7 @@ section {
 
 .main {
     width: 100%;
-    min-height: 130vh;
+    min-height: 110vh;
     display: flex;
     align-items: center;
     background: url(images/background.jpg) no-repeat center center/cover;
@@ -199,28 +198,29 @@ section {
 
 
 
-
 /* About Section */
 .about-section {
-    padding-top: 10px; /* Increase space below the fixed header to make it wider */
+    padding-top: 0px; /* Reduce padding to minimize the gap */
     background-color: #f9f9f9;
-    width: 100%; /* Ensure full width */
-    box-sizing: border-box; /* Include padding and border in width calculation */
-    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px; /* Adjust overall padding for content */
 }
 
 .about-title {
-    padding-top: 20px; /* Add space above the title */
+    padding-top: 2px; /* Add space above the title */
+    margin: 0 auto; /* Center the title horizontally */
     display: flex;
     justify-content: center;
+    align-items: center;
     color: #d288e0;
     font-size: 2.5em;
     font-weight: 800;
-    margin-bottom: 3px; /* Minimized space below the title */
-    margin-top: 0px; /* Increased space above the title for more noticeable gap from header */
     text-transform: uppercase;
-    padding: 0; /* Reduced padding for a more compact look */
+    margin-bottom: 20px; /* Control spacing below the title */
 }
+
+
 
 .about-content {
     display: flex;
@@ -507,8 +507,6 @@ section {
         font-size: 0.8em; /* Even smaller font for text */
     }
 }
-
-
 
 
 /*services section*/
