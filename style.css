@@ -591,7 +591,7 @@ section {
 
 /* Icon Style */
 .icon {
-    color: #d288e0;
+    color: rgb(151, 175, 82);
     font-size: 4.5em; /* Slightly larger icon for better visibility */
     margin-bottom: 20px;
     transition: transform 0.3s ease, color 0.3s ease; /* Add transition for color change */
@@ -600,7 +600,7 @@ section {
 /* Icon Hover Effect */
 .card:hover .icon {
     transform: scale(1.2); /* Slight enlargement of icon on hover */
-    color: #d288e0; /* Change icon color on hover */
+    color: rgb(127, 146, 69); /* Change icon color on hover */
 }
 
 /* Info Section Inside Card */
