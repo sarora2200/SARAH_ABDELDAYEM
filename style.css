@@ -80,12 +80,6 @@ header {
     transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
 }
 
-
-
-
-
-
-
 /* Sticky Header on Scroll */
 header.scrolled {
     background-color: rgba(142, 68, 173, 1); /* Stronger purple */
@@ -95,7 +89,33 @@ header.scrolled {
 
 
 /* Responsive design */
+@media screen and (max-width: 320px) {
+    header {
+        flex-direction: row; /* Keep the header layout in a row */
+        justify-content: space-between; /* Keep logo and links spaced properly */
+        padding: 10px 15px;
+    }
 
+    .logo {
+        font-size: 1.8em; /* Further reduce logo size */
+    }
+
+    .navigation {
+        display: flex; /* Ensure navigation stays in a row */
+        gap: 1px; /* Further reduce the gap between links */
+        width: auto; /* Ensure the width is automatically adjusted */
+    }
+
+    .navigation a {
+        font-size: 0.75em; /* Reduce font size even more */
+        padding: 4px 8px; /* Reduce padding more to fit small screens */
+    }
+
+    .navigation a:hover {
+        background-color: rgba(255, 255, 255, 0.6); /* Same hover effect */
+        transform: none; /* No scaling effect to keep things stable */
+    }
+}
 
 
 
