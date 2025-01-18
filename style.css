@@ -52,16 +52,16 @@ header {
 .navigation {
     display: flex;
     flex-wrap: wrap; /* Allow the links to wrap onto the next line */
-    gap: 10px; /* Space between links */
+    gap: 5px; /* Reduced space between links */
     justify-content: flex-start;
     width: auto; /* Automatically adjust width based on content */
 }
 
 .navigation a {
     color: #fff;
-    font-size: 1em;
+    font-size: 0.9em; /* Reduce font size more */
     font-weight: 400;
-    padding: 8px 15px;
+    padding: 5px 10px; /* Reduce padding further */
     border-radius: 8px;
     transition: color 0.3s, background-color 0.3s, transform 0.2s;
     flex-shrink: 1; /* Allow links to shrink */
@@ -88,8 +88,8 @@ header.scrolled {
     }
 
     .navigation a {
-        font-size: 0.9em; /* Adjust font size of navigation links */
-        padding: 6px 12px; /* Adjust padding for smaller screens */
+        font-size: 0.85em; /* Adjust font size of navigation links */
+        padding: 5px 10px; /* Adjust padding for smaller screens */
     }
 }
 
@@ -106,13 +106,13 @@ header.scrolled {
 
     .navigation {
         display: flex; /* Ensure navigation stays in a row */
-        gap: 5px; /* Reduce the gap between links */
+        gap: 1px; /* Further reduce the gap between links */
         width: auto; /* Ensure the width is automatically adjusted */
     }
 
     .navigation a {
-        font-size: 0.85em; /* Reduce font size of the links */
-        padding: 6px 10px; /* Adjust padding to bring links closer */
+        font-size: 0.75em; /* Reduce font size even more */
+        padding: 4px 8px; /* Reduce padding more to fit small screens */
     }
 
     .navigation a:hover {
@@ -120,6 +120,8 @@ header.scrolled {
         transform: none; /* No scaling effect to keep things stable */
     }
 }
+
+
 
 
 
