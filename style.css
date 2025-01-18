@@ -51,7 +51,7 @@ header {
 /* Navigation Links */
 .navigation {
     display: flex;
-    gap: 15px;
+    gap: 0.1px;
 }
 
 .navigation a {
@@ -76,7 +76,10 @@ header.scrolled {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
 }
 
-/* Main Section Styles */
+
+
+
+/* Main Section*/
 section {
     padding: 100px 200px;
 }
@@ -220,6 +223,10 @@ section {
         padding: 100px 200px;
     }
 }
+
+
+
+
 
 /* About Section */
 .about-section {
@@ -907,4 +914,3 @@ section {
         font-size: 1.8em;
     }
 }
-
