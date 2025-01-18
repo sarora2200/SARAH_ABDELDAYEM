@@ -377,7 +377,7 @@ section {
 @media screen and (max-width: 768px) {
     .about-section {
         padding: 30px;
-        padding-top: 70px; /* Reduced top padding for smaller screens */
+        padding-top: 140px; /* Reduced top padding for smaller screens */
     }
 
     .about-content {
@@ -740,6 +740,9 @@ section {
 }
 
 @media (max-width: 425px) {
+    .projects-section{
+        padding-top: 140px;
+    }
     .projects-content {
         gap: 10px;
     }
@@ -1043,12 +1046,18 @@ section {
 /* Adjust padding-top for smaller screens */
 @media (max-width: 768px) {
     .contact-section {
-        padding-top: 110px; /* Reduced top padding for smaller screens */
+        padding-top: 120px; /* Reduced top padding for smaller screens */
+    }
+}
+
+@media (max-width: 375px) {
+    .contact-section {
+        padding-top: 140px; /* Reduced top padding for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .contact-section {
-        padding-top: 110px; /* Further reduced padding for very small screens */
+        padding-top: 150px; /* Further reduced padding for very small screens */
     }
 }
