@@ -45,6 +45,7 @@ header {
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
+    margin-left: 50px;
     border: 2px solid rgba(255, 255, 255, 0.7);
 }
 
@@ -52,14 +53,14 @@ header {
 .navigation {
     display: flex;
     flex-wrap: wrap; /* Allow the links to wrap onto the next line */
-    gap: 3px; /* Reduced gap for links */
+    gap: 10px; /* Reduced gap for links */
     justify-content: flex-start;
     width: auto; /* Automatically adjust width based on content */
 }
 
 .navigation a {
     color: #fff;
-    font-size: 0.4em; /* Further reduce font size of the links */
+    font-size: 1.1em; /* Further reduce font size of the links */
     font-weight: 400;
     padding: 2px 4px; /* Reduced padding to bring links closer */
     border-radius: 8px;
@@ -69,10 +70,21 @@ header {
 }
 
 .navigation a:hover {
-    color: #4a4a4a;
-    background-color: rgba(255, 255, 255, 0.6);
-    transform: scale(1.05);
+    color: rgb(165, 191, 86); /* Bright yellowish-green to stand out against the purple background */
+    transform: scale(1.05); /* Slight scale for hover effect */
+    text-shadow:
+        0 0 10px rgb(253, 253, 253), /* Glowing white light */
+        0 0 15px rgb(248, 249, 244), /* Slightly off-white glow */
+        0 0 20px rgb(250, 252, 246), /* Faint glow */
+        0 0 4px rgb(255, 255, 255); /* White outline effect */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
 }
+
+
+
+
+
+
 
 /* Sticky Header on Scroll */
 header.scrolled {
@@ -82,76 +94,7 @@ header.scrolled {
 }
 
 
-/*responsive design*/   
-@media screen and (max-width: 768px) {
-    .logo {
-        font-size: 2em; /* Reduce logo size */
-    }
-
-    .navigation a {
-        font-size: 0.7em; /* Adjust font size of navigation links */
-        padding: 5px 7px; /* Adjust padding for smaller screens */
-    }
-}
-
-@media screen and (max-width: 375px) {
-    header {
-        flex-direction: row; /* Keep the header layout in a row */
-        justify-content: space-between; /* Keep logo and links spaced properly */
-        padding: 10px 15px; /* Reduce padding for small screen */
-    }
-
-    .logo {
-        font-size: 1.7em; /* Reduce logo size further */
-    }
-
-    .navigation {
-        display: flex; /* Ensure navigation stays in a row */
-        gap: 0.02px; /* Further reduce the gap between links */
-        width: auto; /* Ensure the width is automatically adjusted */
-    }
-
-    .navigation a {
-        font-size: 0.50em; /* Reduce font size further */
-        padding: 2px 4px; /* Further reduce padding to bring links closer */
-    }
-
-    .navigation a:hover {
-        background-color: rgba(255, 255, 255, 0.6); /* Same hover effect */
-        transform: none; /* No scaling effect to keep things stable */
-    }
-}
-
-@media screen and (max-width: 320px) {
-    header {
-        flex-direction: row; /* Keep the header layout in a row */
-        justify-content: space-between; /* Keep logo and links spaced properly */
-        padding: 10px 15px;
-    }
-
-    .logo {
-        font-size: 1.8em; /* Further reduce logo size */
-    }
-
-    .navigation {
-        display: flex; /* Ensure navigation stays in a row */
-        gap: 1px; /* Further reduce the gap between links */
-        width: auto; /* Ensure the width is automatically adjusted */
-    }
-
-    .navigation a {
-        font-size: 0.75em; /* Reduce font size even more */
-        padding: 4px 8px; /* Reduce padding more to fit small screens */
-    }
-
-    .navigation a:hover {
-        background-color: rgba(255, 255, 255, 0.6); /* Same hover effect */
-        transform: none; /* No scaling effect to keep things stable */
-    }
-}
-
-
-
+/* Responsive design */
 
 
 
