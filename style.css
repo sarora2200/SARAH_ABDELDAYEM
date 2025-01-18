@@ -52,16 +52,16 @@ header {
 .navigation {
     display: flex;
     flex-wrap: wrap; /* Allow the links to wrap onto the next line */
-    gap: 5px; /* Reduced space between links */
+    gap: 3px; /* Reduced gap for links */
     justify-content: flex-start;
     width: auto; /* Automatically adjust width based on content */
 }
 
 .navigation a {
     color: #fff;
-    font-size: 0.9em; /* Reduce font size more */
+    font-size: 0.4em; /* Further reduce font size of the links */
     font-weight: 400;
-    padding: 5px 10px; /* Reduce padding further */
+    padding: 2px 4px; /* Reduced padding to bring links closer */
     border-radius: 8px;
     transition: color 0.3s, background-color 0.3s, transform 0.2s;
     flex-shrink: 1; /* Allow links to shrink */
@@ -81,15 +81,44 @@ header.scrolled {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
 }
 
-/* Responsive Styling */
+
+/*responsive design*/   
 @media screen and (max-width: 768px) {
     .logo {
         font-size: 2em; /* Reduce logo size */
     }
 
     .navigation a {
-        font-size: 0.85em; /* Adjust font size of navigation links */
-        padding: 5px 10px; /* Adjust padding for smaller screens */
+        font-size: 0.7em; /* Adjust font size of navigation links */
+        padding: 5px 7px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 375px) {
+    header {
+        flex-direction: row; /* Keep the header layout in a row */
+        justify-content: space-between; /* Keep logo and links spaced properly */
+        padding: 10px 15px; /* Reduce padding for small screen */
+    }
+
+    .logo {
+        font-size: 1.7em; /* Reduce logo size further */
+    }
+
+    .navigation {
+        display: flex; /* Ensure navigation stays in a row */
+        gap: 0.02px; /* Further reduce the gap between links */
+        width: auto; /* Ensure the width is automatically adjusted */
+    }
+
+    .navigation a {
+        font-size: 0.50em; /* Reduce font size further */
+        padding: 2px 4px; /* Further reduce padding to bring links closer */
+    }
+
+    .navigation a:hover {
+        background-color: rgba(255, 255, 255, 0.6); /* Same hover effect */
+        transform: none; /* No scaling effect to keep things stable */
     }
 }
 
@@ -120,6 +149,10 @@ header.scrolled {
         transform: none; /* No scaling effect to keep things stable */
     }
 }
+
+
+
+
 
 
 
