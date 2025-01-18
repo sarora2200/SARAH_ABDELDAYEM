@@ -421,11 +421,6 @@ section {
 
 
 
-
-
-
-
-
 /* Services Section */
 .services-section {
     background: linear-gradient(145deg, #fbfbfb, #f9f9f9); /* Soft gradient for modern appeal */
@@ -559,6 +554,8 @@ section {
         margin-top: 30px;
     }
 }
+
+
 
 
 
@@ -716,13 +713,60 @@ section {
     }
 
     .project-card {
-        width: calc((100% - 30px) / 2); /* Show 2 cards at a time on smaller screens */
+        width: 100%; /* Full width for one card per page on small screens */
+        margin-bottom: 30px; /* Ensure spacing between the cards */
     }
 
     .projects-section .title {
         font-size: 2em;
     }
 }
+
+@media (max-width: 425px) {
+    .projects-content {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .project-card {
+        width: 100%; /* Full width for one card per page on small screens */
+        margin-bottom: 30px; /* Ensure spacing between the cards */
+    }
+
+    .projects-section .title {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 375px) {
+    .projects-content {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .project-card {
+        width: 100%; /* Full width for one card per page on small screens */
+        margin-bottom: 30px; /* Ensure spacing between the cards */
+    }
+
+    .projects-section .title {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 320px) {
+    .projects-content {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .project-card {
+        width: 100%; /* Full width for one card per page on small screens */
+        margin-bottom: 30px; /* Ensure spacing between the cards */
+    }
+
+    .projects-section .title {
+        font-size: 1.4em;
+    }
+}
+
 
 
 
