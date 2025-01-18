@@ -126,7 +126,7 @@
                     <h3>Data Collection and Cleaning</h3>
                     <p>Ensures data accuracy and consistency by gathering reliable data from various sources and
                         cleaning it for thorough analysis</p>
-                    <a href="./pages/collectdata.html" target="_blank" class="project-details-link">More Details</a>
+                    <a href="./pages/collectdata.html" target="_blank" class="service-details-link">More Details</a>
                 </div>
             </div>
             <!-- نهاية كارت السيرفس -->
@@ -140,7 +140,7 @@
                     <h3>Cost & Efficiency Optimization</h3>
                     <p>Reduces costs and improves efficiency by analyzing operational data to identify areas for cost
                         savings, streamline processes, and optimize resource allocation.</p>
-                    <a href="./pages/Cost&efficiency.html" target="_blank" class="project-details-link">More Details</a>
+                    <a href="./pages/Cost&efficiency.html" target="_blank" class="service-details-link">More Details</a>
                 </div>
             </div>
             <!-- نهاية كارت السيرفس -->
@@ -154,7 +154,7 @@
                     <h3>Predictive Analytics</h3>
                     <p>Uses predictive analytics to forecast future trends and outcomes, enabling proactive
                         decision-making and strategic planning.</p>
-                    <a href="./pages/predictive-analytics.html" target="_blank" class="project-details-link">More
+                    <a href="./pages/predictive-analytics.html" target="_blank" class="service-details-link">More
                         Details</a>
                 </div>
             </div>
@@ -321,7 +321,7 @@
         <!-- Right Scroll Button -->
         <button class="scroll-button right" aria-label="Scroll right" onclick="scrollProjects(1)">&#8250;</button>
 
-        <script>
+        <!--script>
             document.querySelector('.scroll-button.left').addEventListener('click', function () {
                 const projectsContent = document.querySelector('.projects-content');
                 projectsContent.scrollBy({
@@ -337,6 +337,34 @@
                     behavior: 'smooth'
                 });
             });
+        </script-->
+
+        <script>
+        document.querySelector('.scroll-button.left').addEventListener('click', function () {
+            const projectsContent = document.querySelector('.projects-content');
+            const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
+
+            // Scroll by one card width when on small screens
+            const scrollAmount = window.innerWidth <= 768 ? projectCardWidth : projectsContent.clientWidth;
+
+            projectsContent.scrollBy({
+                left: -scrollAmount, // Scroll left by one card width (or content width on large screens)
+                behavior: 'smooth'
+            });
+        });
+
+        document.querySelector('.scroll-button.right').addEventListener('click', function () {
+            const projectsContent = document.querySelector('.projects-content');
+            const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
+
+            // Scroll by one card width when on small screens
+            const scrollAmount = window.innerWidth <= 768 ? projectCardWidth : projectsContent.clientWidth;
+
+            projectsContent.scrollBy({
+                left: scrollAmount, // Scroll right by one card width (or content width on large screens)
+                behavior: 'smooth'
+            });
+        });
         </script>
 
     </section>
