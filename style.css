@@ -237,7 +237,7 @@ section {
     }
 
     section {
-        padding: 80px 40px;
+        padding-top: 80px;
     }
 }
 
@@ -725,6 +725,9 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .projects-section{
+        padding-top: 140px; /* Reduced top padding for smaller screens */
+    }
     .projects-content {
         gap: 10px; /* Reduce gap for smaller screens */
     }
@@ -739,9 +742,45 @@ section {
     }
 }
 
+@media (max-width: 480px) {
+    .projects-section{
+        padding-top: 150px; /* Further reduced padding for very small screens */
+    }
+    .projects-content {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .project-card {
+        width: 100%; /* Full width for one card per page on small screens */
+        margin-bottom: 30px;
+    }
+
+    .projects-section .title {
+        font-size: 1.8em;
+    }
+}
+
 @media (max-width: 425px) {
     .projects-section{
-        padding-top: 140px;
+        padding-top: 180px;
+    }
+    .projects-content {
+        gap: 10px;
+    }
+
+    .project-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .projects-section .title {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 375px) {
+    .projects-section{
+        padding-top: 170px;
     }
     .projects-content {
         gap: 10px;
