@@ -1043,12 +1043,12 @@ section {
 /* Adjust padding-top for smaller screens */
 @media (max-width: 768px) {
     .contact-section {
-        padding-top: 90px; /* Reduced top padding for smaller screens */
+        padding-top: 110px; /* Reduced top padding for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .contact-section {
-        padding-top: 90px; /* Further reduced padding for very small screens */
+        padding-top: 110px; /* Further reduced padding for very small screens */
     }
 }
