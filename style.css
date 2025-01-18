@@ -377,6 +377,7 @@ section {
 @media screen and (max-width: 768px) {
     .about-section {
         padding: 30px;
+        padding-top: 70px; /* Reduced top padding for smaller screens */
     }
 
     .about-content {
@@ -754,11 +755,6 @@ section {
 }
 
 
-
-
-
-
-
 /* Achievements Section */
 .achievements-section {
     background: linear-gradient(145deg, #fbfbfb, #f9f9f9); /* Soft gradient for modern appeal */
@@ -841,6 +837,38 @@ section {
     font-weight: 400;
     line-height: 1.5;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .achievements-content {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .achievements-card {
+        width: 100%; /* Full width for one card per page on small screens */
+        margin-bottom: 30px;
+    }
+
+    .achievements-section .title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 425px) {
+    .achievements-content {
+        gap: 10px;
+    }
+
+    .achievements-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .achievements-section .title {
+        font-size: 1.8em;
+    }
+}
+
 
 
 
@@ -1012,14 +1040,15 @@ section {
     }
 }
 
+/* Adjust padding-top for smaller screens */
 @media (max-width: 768px) {
-    .contact-section .title {
-        font-size: 2.2em;
+    .contact-section {
+        padding-top: 90px; /* Reduced top padding for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
-    .contact-section .title {
-        font-size: 1.8em;
+    .contact-section {
+        padding-top: 90px; /* Further reduced padding for very small screens */
     }
 }
