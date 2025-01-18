@@ -1,17 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Global Reset and Typography */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    box-sizing: border-box; /* Ensure consistent box-sizing */
+}
+
+html {
+    font-size: 16px; /* Base font size for better responsiveness */
 }
 
 body {
-    background-size: cover;
-    color: #fff;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5; /* Better readability */
+    -webkit-font-smoothing: antialiased; /* Smooth fonts on webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Smooth fonts on Firefox macOS */
+}
+
+/* Link & Button Styles */
+a {
+    text-decoration: none; /* Remove underlines from links */
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    border: none;
+    outline: none; /* Remove default outline for form controls */
 }
 
 /* Header Styles */
@@ -75,6 +92,34 @@ header.scrolled {
     padding: 10px 20px; /* Compact padding */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navigation a {
+        font-size: 0.95em;
+        padding: 6px 10px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
 
 /* Main Section Styles */
 section {
@@ -151,75 +196,7 @@ section {
     });
 </script>
 
-/* Responsive Design */
 
-/* Extra Small Devices (Phones, 320px and up) */
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        padding: 10px 15px;
-    }
-
-    .logo {
-        font-size: 1.8em;
-    }
-
-    .navigation {
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .main {
-        padding: 50px 20px;
-    }
-
-    .main h2 {
-        font-size: 1.8em;
-    }
-
-    .main-btn {
-        font-size: 1em;
-        padding: 0.8em 1.8em;
-    }
-}
-
-/* Small Devices (Tablets, 768px and up) */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 2em;
-    }
-
-    .main h2 {
-        font-size: 2.2em;
-    }
-
-    section {
-        padding: 80px 40px;
-    }
-}
-
-/* Medium Devices (Desktops, 992px and up) */
-@media (min-width: 992px) {
-    .main h2 {
-        font-size: 2.5em;
-    }
-
-    section {
-        padding: 100px 100px;
-    }
-}
-
-/* Large Devices (Large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .main h2 {
-        font-size: 3em;
-    }
-
-    section {
-        padding: 100px 200px;
-    }
-}
 
 /* About Section */
 .about-section {
@@ -230,10 +207,10 @@ section {
     padding: 20px; /* Adjust overall padding for content */
 }
 
-/*.about-title {
+.about-title {
     padding-top: 2px; /* Add space above the title */
-   /* margin: 0 auto; /* Center the title horizontally */
-    /*display: flex;
+    margin: 0 auto; /* Center the title horizontally */
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #d288e0;
@@ -241,7 +218,7 @@ section {
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 20px; /* Control spacing below the title */
-/*}*/
+}
 
 /* About Content */
 .about-content {
@@ -337,6 +314,207 @@ section {
     background-color: #b56dc2; /* Darker shade on hover */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
     transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 1.5em; /* Slightly larger than on 320px for better readability */
+        padding: 8px 0; /* Adjust padding for readability */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: 10px; /* Slightly larger gap for better spacing */
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards are full-width */
+        padding: 15px; /* Slightly larger padding */
+        box-sizing: border-box; /* Ensure padding is included within the card's width */
+    }
+
+    .about-image {
+        width: 100%; /* Make image take the full width of the card */
+        margin: 0 0 15px 0; /* Margin at the bottom for spacing */
+    }
+
+    .about-image img {
+        width: 100%; /* Ensure the image fills the width of its container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the container */
+    }
+
+    .about-info h3 {
+        font-size: 1.4em; /* Slightly larger font size for better readability */
+    }
+
+    .about-info p {
+        font-size: 1em; /* Increase text size for better legibility */
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-title {
+        font-size: 1.6em; /* Slightly larger title for better readability */
+        padding: 10px 0; /* Adjust padding for readability */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically on medium screens */
+        gap: 15px; /* More space between cards */
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards are full-width */
+        padding: 20px; /* Slightly larger padding */
+        box-sizing: border-box;
+    }
+
+    .about-image {
+        width: 100%; /* Image should take up the full width */
+        margin: 0 0 20px 0; /* Add bottom margin to separate content from image */
+    }
+
+    .about-image img {
+        width: 100%; /* Ensure image fills the container */
+        height: auto; /* Keep aspect ratio */
+        object-fit: cover; /* Ensure image covers its space */
+    }
+
+    .about-info h3 {
+        font-size: 1.5em; /* Increase heading font size */
+    }
+
+    .about-info p {
+        font-size: 1.1em; /* Larger text for better legibility */
+    }
+}
+
+
+@media (max-width: 611px) {
+    .about-title {
+        font-size: 1.6em; /* Reduce font size for very small screens */
+        padding: 10px 0; /* Reduce padding for better fitting */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically */
+        gap: 10px; /* Reduce the gap between cards */
+    }
+
+    .about-card {
+        width: 100%; /* Ensure cards take up full width */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .about-image {
+        width: 100%; /* Ensure the image takes the full width of its container */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Make sure the image adapts to the screen size */
+    }
+
+    .about-info h3 {
+        font-size: 1.4em; /* Smaller font size for headings */
+    }
+
+    .about-info p {
+        font-size: 0.9em; /* Slightly smaller font for text */
+    }
+
+    .button {
+        font-size: 0.8em; /* Smaller text for very small screens */
+        padding: 6px 12px; /* Reduce padding for compact look */
+        margin-top: 15px; /* Reduce top margin */
+    }
+}
+
+@media (max-width: 375px) {
+    .about-title {
+        font-size: 1.4em; /* Slightly larger than 320px for better readability */
+        padding: 6px 0; /* Minimize padding */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: 8px; /* Adjust gap slightly for better spacing */
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards are full-width */
+        padding: 12px; /* Reduce padding for better fitting */
+        box-sizing: border-box; /* Ensure padding is included in the card's width */
+    }
+
+    .about-image {
+        width: 100%; /* Make image take the full width of the card */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 12px; /* Adjust bottom margin for spacing */
+        overflow: hidden; /* Ensure no overflow outside of the card */
+    }
+
+    .about-image img {
+        width: 100%; /* Ensure the image fills the width of its container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+    }
+
+    .about-info h3 {
+        font-size: 1.3em; /* Slightly larger font size for better readability */
+    }
+
+    .about-info p {
+        font-size: 0.9em; /* Increase text size slightly for better legibility */
+    }
+}
+
+@media (max-width: 320px) {
+    .about-title {
+        font-size: 1.3em; /* Further reduce font size */
+        padding: 5px 0; /* Minimize padding */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically on very small screens */
+        gap: 5px; /* Minimize the gap between cards */
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column; /* Stack image above content */
+        width: 100%; /* Ensure cards take up full width */
+        padding: 10px; /* Minimize padding */
+        box-sizing: border-box; /* Adjust for border box sizing */
+    }
+
+    .about-image {
+        width: 100%; /* Image should take up the full width */
+        margin-bottom: 10px; /* Add bottom margin for separation */
+    }
+
+    .about-info h3 {
+        font-size: 1.2em; /* Reduce font size for very small screens */
+    }
+
+    .about-info p {
+        font-size: 0.8em; /* Adjust text size for better readability on small screens */
+    }
+
+    .button {
+        font-size: 0.7em; /* Smaller font size for the button */
+        padding: 5px 10px; /* Reduced padding for the button */
+    }
 }
 
 
@@ -474,6 +652,10 @@ section {
         margin-top: 30px;
     }
 }
+
+
+
+
 
 
 
