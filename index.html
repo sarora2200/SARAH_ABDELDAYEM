@@ -102,7 +102,7 @@
                         في مجال الرعاية الصحية و غيره من المجالات الأخري. </p>
 
                     <!-- Add the Button -->
-                    <a href="https://drive.google.com/file/d/1tMYAGgCt7NbN_ptij8rPMV3fhFL-Myfm/view?usp=sharing"
+                    <a href="https://drive.google.com/file/d/1wg-qi5ohpVqaQyxRk2gNrO1TJqisCJDU/view?usp=sharing"
                         target="_blank" class="button">Resume</a>
                 </div>
                 <div class="about-image">
@@ -209,8 +209,7 @@
                     <a href="pages/sales4.html" target="_blank" class="project-details-link">More Details</a>
                 </div>
                 <div class="project-sample">
-                    <a href="./images/Finished Dashboard.mp4"
-                        target="_blank">
+                    <a href="./images/Finished Dashboard.mp4" target="_blank">
                         <img src="images/Sales4.png" alt="Dashboard">
                     </a>
                 </div>
@@ -363,31 +362,31 @@
         </script-->
 
         <script>
-        document.querySelector('.scroll-button.left').addEventListener('click', function () {
-            const projectsContent = document.querySelector('.projects-content');
-            const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
+            document.querySelector('.scroll-button.left').addEventListener('click', function () {
+                const projectsContent = document.querySelector('.projects-content');
+                const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
 
-            // Scroll by one card width when on small screens
-            const scrollAmount = window.innerWidth <= 768 ? projectCardWidth : projectsContent.clientWidth;
+                // Scroll by one card width when on small screens
+                const scrollAmount = window.innerWidth <= 768 ? projectCardWidth : projectsContent.clientWidth;
 
-            projectsContent.scrollBy({
-                left: -scrollAmount, // Scroll left by one card width (or content width on large screens)
-                behavior: 'smooth'
+                projectsContent.scrollBy({
+                    left: -scrollAmount, // Scroll left by one card width (or content width on large screens)
+                    behavior: 'smooth'
+                });
             });
-        });
 
-        document.querySelector('.scroll-button.right').addEventListener('click', function () {
-            const projectsContent = document.querySelector('.projects-content');
-            const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
+            document.querySelector('.scroll-button.right').addEventListener('click', function () {
+                const projectsContent = document.querySelector('.projects-content');
+                const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
 
-            // Scroll by one card width when on small screens
-            const scrollAmount = window.innerWidth <= 768 ? projectCardWidth : projectsContent.clientWidth;
+                // Scroll by one card width when on small screens
+                const scrollAmount = window.innerWidth <= 768 ? projectCardWidth : projectsContent.clientWidth;
 
-            projectsContent.scrollBy({
-                left: scrollAmount, // Scroll right by one card width (or content width on large screens)
-                behavior: 'smooth'
+                projectsContent.scrollBy({
+                    left: scrollAmount, // Scroll right by one card width (or content width on large screens)
+                    behavior: 'smooth'
+                });
             });
-        });
         </script>
 
     </section>
