@@ -2,7 +2,6 @@
 layout: post
 title: "Healthcare Analytics Trends in 2025"
 date: 2025-01-01
-image: assests/images/first-post-banner.jpg
 author: "Sarah Abdeldayem"
 ---
 
