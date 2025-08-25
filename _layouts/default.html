@@ -532,13 +532,7 @@
 <body>
   <header>
     <div class="header-container">
-      <h1 class="site-title">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ '/images/logo00.png' | relative_url }}" alt="{{ site.title }}" height="30">
-        </a>
-      </h1>
-
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
 
       <nav class="nav-links">
         <a href="{{ '/' | relative_url }}">🏠 Home</a>
@@ -583,7 +577,7 @@
     <section id="newsletter" class="newsletter-cta">
       <h2>Stay Updated with the Latest Trends</h2>
       <p>Subscribe to my newsletter and never miss a post about healthcare analytics, AI, and data science.</p>
-      <form class="newsletter-form" action="mailto:Sarah_Abdeldayem@proton.me" method="POST">
+      <form class="newsletter-form" action="https://buttondown.email/api/emails/embed-subscribe/sarah_abdeldayem" method="POST">
         <input type="email" name="email" placeholder="Your email address" required aria-label="Your email address">
         <button type="submit">Subscribe</button>
       </form>
