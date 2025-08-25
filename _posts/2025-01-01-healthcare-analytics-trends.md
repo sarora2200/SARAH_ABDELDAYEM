@@ -6,7 +6,7 @@ categories:
   - healthcare
   - analytics
   - trends
-image: /assests/images/healthcare-analytics-trends.jpg
+image: healthcare-analytics-trends.jpg
 author: "Sarah Abdeldayem"
 description: "Discover the top healthcare analytics trends in 2025, from AI-powered diagnostics to predictive medicine and wearables. Learn how data is transforming patient care."
 keywords: ["healthcare analytics 2025", "AI in healthcare", "predictive medicine", "health data trends", "wearables healthcare", "personalized medicine"]
