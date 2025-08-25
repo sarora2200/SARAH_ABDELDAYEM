@@ -36,81 +36,143 @@
       color: #6d28d9;
     }
 
-    .blog-container {
-      max-width: 850px;
+    /* Category Filter */
+    .category-filter {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    .filter-btn {
+      display: inline-block;
+      margin: 0 0.4rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background: #f3f4f6;
+      color: #374151;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      background: #6d28d9;
+      color: #fff;
+    }
+
+    main {
+      max-width: 1100px;
       margin: 2rem auto;
-      padding: 2rem;
+      padding: 0 1rem;
+    }
+
+    .blog-container {
       background: #ffffffdd;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      padding: 2rem;
     }
 
     h1 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       color: #6d28d9;
       margin-bottom: 2rem;
     }
 
-    ul.post-list {
-      list-style: none;
-      padding: 0;
+    /* Post Grid */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.8rem;
     }
 
-    ul.post-list li {
-      margin-bottom: 1.5rem;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #ecfdf5, #fdf2f8, #f5f3ff);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
+    .post-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     }
 
-    ul.post-list li:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    .thumbnail {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .post-card:hover .thumbnail {
+      transform: scale(1.03);
     }
 
-    ul.post-list a {
+    .post-info {
+      padding: 1rem 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2d2d2d;
       text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #059669; /* green */
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
     }
-
-    ul.post-list a:hover {
-      color: #ec4899; /* pink */
-    }
-
-    .post-date {
-      display: block;
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin-top: 0.3rem;
-    }
-
-    .back-home {
-      display: block;
-      text-align: center;
-      margin-top: 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      color: #6d28d9;
-    }
-
-    .back-home:hover {
+    .post-title:hover {
       color: #ec4899;
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      color: #6d28d9;
+      margin-bottom: 0.8rem;
+    }
+
+    .post-excerpt {
+      flex: 1;
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 0.8rem;
+    }
+
+    .read-more {
+      align-self: flex-start;
+      color: #7D4E85;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .read-more:hover {
+      color: #c45dbc;
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="{{ '/' | relative_url }}">🏠 Home</a> |
-    <a href="{{ '/blog.html' | relative_url }}">📝 Blog</a>
+    <a href="{{ '/' | relative_url }}" target="_blank">🏠 Home</a> |
+    <a href="{{ '/blog.html' | relative_url }}" target="_blank">📝 Blog</a>
   </header>
 
+  <!-- Category Filter -->
+  <div class="category-filter">
+    <a class="filter-btn" href="{{ '/blog.html' | relative_url }}">All</a>
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      <a class="filter-btn" href="{{ '/categories/' | append: category[0] | relative_url }}">
+        {{ category[0] | capitalize }}
+      </a>
+    {% endfor %}
+  </div>
+
   <main>
-    {{ content }}
+    <div class="blog-container">
+      {{ content | replace: '<a ', '<a target="_blank" rel="nofollow" ' }}
+    </div>
   </main>
 </body>
 </html>
