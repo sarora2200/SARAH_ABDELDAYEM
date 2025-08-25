@@ -1,94 +1,352 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category: {{ page.title | capitalize }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<h1 class="category-title">📂 {{ page.title | capitalize }}</h1>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f5ff 0%, #fef9ff 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-<div class="blog-posts">
-  {% for post in site.posts %}
-    {% if post.categories contains page.category %}
-      <div class="post-card">
-        {% if post.image %}
-          <a href="{{ post.url | relative_url }}" target="_blank" rel="nofollow">
-            <img src="{{ '/assests/images/' | append: post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
-          </a>
-        {% endif %}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        <h2>
-          <a href="{{ post.url | relative_url }}" target="_blank" rel="nofollow">{{ post.title }}</a>
-        </h2>
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(to right, #7D4E85, #9C6FA3);
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(125, 78, 133, 0.2);
+        }
 
-        <p class="post-meta">
-          {{ post.date | date: "%B %d, %Y" }} • By {{ post.author }}
-        </p>
+        .category-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
 
-        <p class="post-excerpt">
-          {{ post.excerpt | strip_html | truncate: 150 }}
-        </p>
+        .category-info {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
 
-        <!-- Example Affiliate Link -->
-        {% if post.affiliate_link %}
-          <a href="{{ post.affiliate_link }}" target="_blank" rel="nofollow" class="read-more">Buy Now →</a>
-        {% else %}
-          <a href="{{ post.url | relative_url }}" class="read-more" target="_blank" rel="nofollow">Read More →</a>
-        {% endif %}
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
 
-<p class="back-home">
-  <a href="{{ '/blog.html' | relative_url }}">← Back to Blog</a>
-</p>
+        .post-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-<style>
-.category-title {
-  text-align: center;
-  color: #7D4E85;
-  margin-bottom: 25px;
-}
-.blog-posts {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-.post-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-.post-card:hover {
-  transform: translateY(-5px);
-}
-.post-image {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-.post-meta {
-  font-size: 0.9em;
-  color: #777;
-}
-.post-excerpt {
-  margin: 10px 0;
-  color: #333;
-}
-.read-more {
-  color: #7D4E85;
-  font-weight: bold;
-  text-decoration: none;
-}
-.read-more:hover {
-  color: #c45dbc;
-}
-.back-home {
-  text-align: center;
-  margin-top: 30px;
-}
-.back-home a {
-  color: #4b8a4b;
-  text-decoration: none;
-}
-</style>
+        .post-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(125, 78, 133, 0.15);
+        }
+
+        .post-image-container {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .post-card:hover .post-image {
+            transform: scale(1.05);
+        }
+
+        .post-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #5a3975;
+        }
+
+        .post-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .post-title a:hover {
+            color: #7D4E85;
+            text-decoration: underline;
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .post-excerpt {
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #7D4E85;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: #f4eff7;
+        }
+
+        .read-more:hover {
+            color: white;
+            background-color: #7D4E85;
+            transform: translateY(-2px);
+        }
+
+        .post-categories {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .category-tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background-color: #eee6f5;
+            color: #7D4E85;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eae0f0;
+        }
+
+        .back-home a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7D4E85;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            background-color: #f4eff7;
+            transition: all 0.3s;
+        }
+
+        .back-home a:hover {
+            background-color: #7D4E85;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(125, 78, 133, 0.3);
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            background-color: #faf6fc;
+            border-radius: 12px;
+            color: #7D4E85;
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+
+            .category-title {
+                font-size: 2rem;
+            }
+
+            .header {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .category-title {
+                font-size: 1.7rem;
+            }
+
+            .post-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="category-title">
+                <i class="fas fa-folder"></i> {{ page.title | capitalize }}
+            </h1>
+            <p class="category-info">Browse all posts in this category</p>
+        </div>
+
+        <div class="blog-posts">
+            <!-- Sample Post 1 -->
+            <div class="post-card">
+                <div class="post-image-container">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Healthcare Analytics" class="post-image">
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">
+                        <a href="#">Top Healthcare Analytics Trends in 2025</a>
+                    </h2>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> January 15, 2025 •
+                        <i class="fas fa-user"></i> By Sarah Abdeldayem
+                    </div>
+                    <p class="post-excerpt">
+                        Discover the top healthcare analytics trends in 2025, from AI-powered diagnostics to predictive medicine and wearables. Learn how data is transforming patient care.
+                    </p>
+                    <div class="post-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="post-categories">
+                            <span class="category-tag">Healthcare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Post 2 -->
+            <div class="post-card">
+                <div class="post-image-container">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Bioinformatics" class="post-image">
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">
+                        <a href="#">The Role of Bioinformatics in Personalized Medicine</a>
+                    </h2>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> February 3, 2025 •
+                        <i class="fas fa-user"></i> By Sarah Abdeldayem
+                    </div>
+                    <p class="post-excerpt">
+                        Explore how bioinformatics is turning genomic data into actionable insights, enabling tailored treatments and revolutionizing patient care.
+                    </p>
+                    <div class="post-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="post-categories">
+                            <span class="category-tag">Bioinformatics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Post 3 -->
+            <div class="post-card">
+                <div class="post-image-container">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Data Science" class="post-image">
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">
+                        <a href="#">Breaking Down ML Model for Breast Cancer Prediction</a>
+                    </h2>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> March 12, 2025 •
+                        <i class="fas fa-user"></i> By Sarah Abdeldayem
+                    </div>
+                    <p class="post-excerpt">
+                        A technical deep dive into the machine learning model built to classify breast cancer tumors as malignant or benign. Walk through the code and results.
+                    </p>
+                    <div class="post-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="post-categories">
+                            <span class="category-tag">Data Science</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-home">
+            <a href="{{ '/blog.html' | relative_url }}"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation for page elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const posts = document.querySelectorAll('.post-card');
+            posts.forEach((post, index) => {
+                post.style.opacity = '0';
+                post.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    post.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    post.style.opacity = '1';
+                    post.style.transform = 'translateY(0)';
+                }, 100 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>
