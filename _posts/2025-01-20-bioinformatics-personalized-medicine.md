@@ -1,13 +1,7 @@
-
 ---
 layout: post
 title: "Beyond One-Size-Fits-All: How Bioinformatics is Powering the Personalized Medicine Revolution"
 date: 2025-01-20
-categories:
-  - bioinformatics
-  - personalized medicine
-  - genomics
-  - industry analysis
 image: bioinformatics-personalized-medicine.jpg
 author: "Sarah Abdeldayem"
 description: "Explore how bioinformatics is turning genomic data into actionable insights, enabling tailored treatments and revolutionizing patient care in the era of personalized medicine."
