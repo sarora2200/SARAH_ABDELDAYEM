@@ -2,129 +2,17 @@
 layout: default
 title: Blog
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #f0f9f9, #fce7f3, #f3e8ff);
-      color: #2d2d2d;
-      line-height: 1.7;
-    }
+<div class="blog-container">
+  <h1>Blog</h1>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="post-date">({{ post.date | date: "%B %d, %Y" }})</span>
+      </li>
+    {% endfor %}
+  </ul>
 
-    header {
-      background: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
-      color: #2d2d2d;
-      padding: 1rem 2rem;
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    header a {
-      color: #2d2d2d;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 0.5rem;
-    }
-
-    header a:hover {
-      color: #6d28d9;
-    }
-
-    .blog-container {
-      max-width: 850px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #ffffffdd;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #6d28d9;
-      margin-bottom: 2rem;
-    }
-
-    ul.post-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.post-list li {
-      margin-bottom: 1.5rem;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #ecfdf5, #fdf2f8, #f5f3ff);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    ul.post-list li:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-
-    ul.post-list a {
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #059669; /* green */
-    }
-
-    ul.post-list a:hover {
-      color: #ec4899; /* pink */
-    }
-
-    .post-date {
-      display: block;
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin-top: 0.3rem;
-    }
-
-    .back-home {
-      display: block;
-      text-align: center;
-      margin-top: 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      color: #6d28d9;
-    }
-
-    .back-home:hover {
-      color: #ec4899;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="{{ '/' | relative_url }}">🏠 Home</a> |
-    <a href="{{ '/blog.html' | relative_url }}">📝 Blog</a>
-  </header>
-
-  <div class="blog-container">
-    <h1>Blog</h1>
-    <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <span class="post-date">({{ post.date | date: "%B %d, %Y" }})</span>
-        </li>
-      {% endfor %}
-    </ul>
-
-    <a href="{{ '/' | relative_url }}" class="back-home">⬅ Back to Home</a>
-  </div>
-</body>
-</html>
+  <a href="{{ '/' | relative_url }}" class="back-home">⬅ Back to Home</a>
+</div>

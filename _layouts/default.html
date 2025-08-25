@@ -2,151 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <meta name="description" content="{{ site.description }}">
-  <meta name="keywords" content="{{ site.keywords }}">
-  <meta name="author" content="{{ site.author }}">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Segoe UI', Roboto, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #fdf2f8, #f0fdf4, #f5f3ff);
-      color: #333;
-      line-height: 1.6;
+      background: linear-gradient(135deg, #f0f9f9, #fce7f3, #f3e8ff);
+      color: #2d2d2d;
+      line-height: 1.7;
     }
 
     header {
-      background: linear-gradient(135deg, #d8b4fe, #f9a8d4, #bbf7d0);
-      color: #fff;
-      padding: 2rem;
+      background: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
+      color: #2d2d2d;
+      padding: 1rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-bottom-left-radius: 25px;
-      border-bottom-right-radius: 25px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      padding: 0.75rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      color: #6d28d9;
-      margin: 0 1rem;
-      text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      padding: 0.5rem 0.8rem;
-      border-radius: 8px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    nav a:hover {
-      background: #f9a8d4;
-      color: #1f2937;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: linear-gradient(135deg, #d8b4fe, #f9a8d4, #bbf7d0);
-      color: #1f2937;
-      margin-top: 2rem;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-    }
-
-    h1, h2, h3 {
-      color: #374151;
-    }
-
-    a {
-      color: #ec4899;
+    header a {
+      color: #2d2d2d;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-weight: bold;
+      margin: 0 0.5rem;
     }
 
-    a:hover {
+    header a:hover {
       color: #6d28d9;
-      text-decoration: underline;
     }
 
-    /* Blog post list styling */
-    .post-list {
+    .blog-container {
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #ffffffdd;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #6d28d9;
+      margin-bottom: 2rem;
+    }
+
+    ul.post-list {
       list-style: none;
       padding: 0;
-      display: grid;
-      gap: 1.5rem;
     }
 
-    .post-list li {
-      background: linear-gradient(135deg, #fff, #fce7f3, #f3e8ff, #ecfdf5);
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    ul.post-list li {
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ecfdf5, #fdf2f8, #f5f3ff);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .post-list li:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    ul.post-list li:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
 
-    .post-list li a {
-      font-size: 1.4rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #ec4899, #8b5cf6, #10b981);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    ul.post-list a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #059669; /* green */
     }
 
-    .post-list li span {
+    ul.post-list a:hover {
+      color: #ec4899; /* pink */
+    }
+
+    .post-date {
       display: block;
       font-size: 0.9rem;
       color: #6b7280;
+      margin-top: 0.3rem;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #6d28d9;
+    }
+
+    .back-home:hover {
+      color: #ec4899;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>{{ site.title }}</h1>
+    <a href="{{ '/' | relative_url }}">🏠 Home</a> |
+    <a href="{{ '/blog.html' | relative_url }}">📝 Blog</a>
   </header>
-
-  <nav>
-    <a href="{{ '/' | relative_url }}">Home</a>
-    <a href="{{ '/blog.html' | relative_url }}">Blog</a>
-  </nav>
 
   <main>
     {{ content }}
   </main>
-
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-  </footer>
 </body>
 </html>
