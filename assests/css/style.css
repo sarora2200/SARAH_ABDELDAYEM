@@ -1,0 +1,150 @@
+/* Global Body */
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f0f9f9, #fce7f3, #f3e8ff);
+  color: #2d2d2d;
+  line-height: 1.7;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
+  color: #2d2d2d;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header a {
+  color: #2d2d2d;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+header a:hover {
+  color: #6d28d9;
+}
+
+/* Blog Container */
+.blog-container, .post-container {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffffdd;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Titles */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #6d28d9;
+  margin-bottom: 2rem;
+}
+
+h1.post-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Blog List */
+ul.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.post-list li {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ecfdf5, #fdf2f8, #f5f3ff);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+ul.post-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+ul.post-list a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #059669; /* green */
+}
+
+ul.post-list a:hover {
+  color: #ec4899; /* pink */
+}
+
+.post-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.3rem;
+}
+
+/* Back Button */
+.back-home {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #6d28d9;
+}
+
+.back-home:hover {
+  color: #ec4899;
+}
+
+/* Post Page */
+.post-banner {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.post-date {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.post-content p {
+  margin: 1rem 0;
+}
+
+.post-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+/* Navigation */
+.post-navigation {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.post-navigation a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.post-navigation a:hover {
+  text-decoration: underline;
+}

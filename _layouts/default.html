@@ -5,48 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords" content="{{ site.keywords }}">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9fafb;
+      background: linear-gradient(135deg, #fdf2f8, #f0fdf4, #f5f3ff);
       color: #333;
       line-height: 1.6;
     }
 
     header {
-      background: #1f2937;
+      background: linear-gradient(135deg, #d8b4fe, #f9a8d4, #bbf7d0);
       color: #fff;
-      padding: 1rem 2rem;
+      padding: 2rem;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
     }
 
     nav {
-      background: #111827;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
       padding: 0.75rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     nav a {
-      color: #f9fafb;
+      color: #6d28d9;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
     }
 
     nav a:hover {
-      color: #60a5fa;
+      background: #f9a8d4;
+      color: #1f2937;
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -54,40 +71,57 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background: #1f2937;
-      color: #9ca3af;
+      background: linear-gradient(135deg, #d8b4fe, #f9a8d4, #bbf7d0);
+      color: #1f2937;
       margin-top: 2rem;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
     }
 
     h1, h2, h3 {
-      color: #111827;
+      color: #374151;
     }
 
     a {
-      color: #2563eb;
+      color: #ec4899;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     a:hover {
+      color: #6d28d9;
       text-decoration: underline;
     }
 
+    /* Blog post list styling */
     .post-list {
       list-style: none;
       padding: 0;
+      display: grid;
+      gap: 1.5rem;
     }
 
     .post-list li {
-      background: #fff;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #fff, #fce7f3, #f3e8ff, #ecfdf5);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .post-list li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
 
     .post-list li a {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 600;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #ec4899, #8b5cf6, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .post-list li span {
@@ -116,5 +150,3 @@
   </footer>
 </body>
 </html>
-
-
