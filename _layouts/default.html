@@ -535,7 +535,6 @@
       <h1 class="site-title">
         <a href="{{ '/' | relative_url }}">
           <img src="{{ '/images/logo00.png' | relative_url }}" alt="{{ site.title }}" height="30">
-          {{ site.title }}
         </a>
       </h1>
 
@@ -544,9 +543,6 @@
       <nav class="nav-links">
         <a href="{{ '/' | relative_url }}">🏠 Home</a>
         <a href="{{ '/blog.html' | relative_url }}">📝 Blog</a>
-        <a href="{{ '/projects.html' | relative_url }}">💼 Projects</a>
-        <a href="{{ '/about.html' | relative_url }}">👤 About</a>
-        <a href="{{ '/contact.html' | relative_url }}">📧 Contact</a>
         <a href="#newsletter" class="subscribe-btn">Subscribe</a>
       </nav>
     </div>
@@ -573,8 +569,6 @@
 
   <main>
     <div class="blog-container">
-      <h1>{{ page.title }}</h1>
-
       <!-- Affiliate disclaimer for monetized content -->
       {% if page.affiliate == true %}
       <div class="affiliate-disclaimer">
@@ -609,9 +603,6 @@
         <ul class="footer-links">
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
           <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
-          <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
-          <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
         </ul>
       </div>
 

@@ -4,46 +4,20 @@
   <meta charset="UTF-8">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
+     <!-- Favicon -->
+  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="128x128">
+  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="256x256">
+  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/images/logo00.png" sizes="180x180">
+  <link rel="mask-icon" href="/images/logo00.png" color="#ff6347">
 
-  <!-- SEO & Social Media Meta Tags -->
-  <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
-  <meta property="og:description" content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
-  <meta property="og:image" content="{{ site.url }}/images/{{ page.image | default: 'default-social.jpg' }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@yourtwitterhandle">
-
-  <!-- Favicon (optimized version) -->
-  <link rel="icon" href="{{ '/images/logo00.png' | relative_url }}" type="image/png">
-  <link rel="apple-touch-icon" href="{{ '/images/logo00.png' | relative_url }}">
-  <link rel="mask-icon" href="{{ '/images/logo00.png' | relative_url }}" color="#6d28d9">
-
-  <!-- Preload critical resources -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="{{ '/style.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
-  </noscript>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{{ page.title }}",
-    "description": "{{ page.description }}",
-    "author": {
-      "@type": "Person",
-      "name": "Sarah Abdeldayem"
-    },
-    "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
-    "image": "{{ site.url }}/images/{{ page.image }}"
-  }
-  
-  </script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Segoe UI', Roboto, sans-serif;
