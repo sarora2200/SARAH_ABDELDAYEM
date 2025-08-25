@@ -252,54 +252,84 @@
         </div>
 
         <div class="blog-posts">
-            <!-- This section will be dynamically populated by Jekyll -->
-            {% for post in site.posts %}
-                {% if post.categories contains page.category %}
-                    <div class="post-card">
-                        <div class="post-image-container">
-                            {% if post.image %}
-                                <img src="{{ site.baseurl }}/assets/images/{{ post.image }}" alt="{{ post.title }}" class="post-image">
-                            {% else %}
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="{{ post.title }}" class="post-image">
-                            {% endif %}
-                        </div>
-                        <div class="post-content">
-                            <h2 class="post-title">
-                                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                            </h2>
-                            <div class="post-meta">
-                                <i class="far fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }} •
-                                <i class="fas fa-user"></i> By {{ post.author }}
-                            </div>
-                            <p class="post-excerpt">
-                                {{ post.excerpt | strip_html | truncate: 150 }}
-                            </p>
-                            <div class="post-footer">
-                                <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                                <div class="post-categories">
-                                    {% for category in post.categories %}
-                                        <span class="category-tag">{{ category }}</span>
-                                    {% endfor %}
-                                </div>
-                            </div>
+            <!-- Sample Post 1 -->
+            <div class="post-card">
+                <div class="post-image-container">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Healthcare Analytics" class="post-image">
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">
+                        <a href="#">Top Healthcare Analytics Trends in 2025</a>
+                    </h2>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> January 15, 2025 •
+                        <i class="fas fa-user"></i> By Sarah Abdeldayem
+                    </div>
+                    <p class="post-excerpt">
+                        Discover the top healthcare analytics trends in 2025, from AI-powered diagnostics to predictive medicine and wearables. Learn how data is transforming patient care.
+                    </p>
+                    <div class="post-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="post-categories">
+                            <span class="category-tag">Healthcare</span>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
-
-            <!-- If no posts found in this category -->
-            {% assign category_posts = site.posts | where_exp: "post", "post.categories contains page.category" %}
-            {% if category_posts.size == 0 %}
-                <div class="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <h3>No posts found in this category</h3>
-                    <p>Check back later for new content in {{ page.category }}.</p>
                 </div>
-            {% endif %}
+            </div>
+
+            <!-- Sample Post 2 -->
+            <div class="post-card">
+                <div class="post-image-container">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Bioinformatics" class="post-image">
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">
+                        <a href="#">The Role of Bioinformatics in Personalized Medicine</a>
+                    </h2>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> February 3, 2025 •
+                        <i class="fas fa-user"></i> By Sarah Abdeldayem
+                    </div>
+                    <p class="post-excerpt">
+                        Explore how bioinformatics is turning genomic data into actionable insights, enabling tailored treatments and revolutionizing patient care.
+                    </p>
+                    <div class="post-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="post-categories">
+                            <span class="category-tag">Bioinformatics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Post 3 -->
+            <div class="post-card">
+                <div class="post-image-container">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Data Science" class="post-image">
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">
+                        <a href="#">Breaking Down ML Model for Breast Cancer Prediction</a>
+                    </h2>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> March 12, 2025 •
+                        <i class="fas fa-user"></i> By Sarah Abdeldayem
+                    </div>
+                    <p class="post-excerpt">
+                        A technical deep dive into the machine learning model built to classify breast cancer tumors as malignant or benign. Walk through the code and results.
+                    </p>
+                    <div class="post-footer">
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="post-categories">
+                            <span class="category-tag">Data Science</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="back-home">
-            <a href="{{ site.baseurl }}/blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            <a href="{{ '/blog.html' | relative_url }}"><i class="fas fa-arrow-left"></i> Back to Blog</a>
         </div>
     </div>
 
