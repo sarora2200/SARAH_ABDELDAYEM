@@ -97,4 +97,5 @@ With so much sensitive data, **privacy and trust** are critical.
 Healthcare analytics isn’t just about numbers—it’s about **saving lives, empowering patients, and transforming care delivery**.
 
 👉 **Ready to stay ahead in healthcare analytics?**
-Explore more insights in our [Blog Section](../blog.html){:target="_blank"} and stay tuned for in-depth case studies! 🚑✨
+Explore more insights in our [Blog Section]({{ '/blog.html' | relative_url }}){:target="_blank"} and stay tuned for in-depth case studies! 🚑✨
+
