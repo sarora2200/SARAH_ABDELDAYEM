@@ -2,6 +2,8 @@
 layout: post
 title: "The 2025 Remote Work Playbook: AI, Async, and the End of the 9-to-5"
 date: 2025-01-02
+categories:
+  - trends
 image: future-of-remote-work-ai.jpg
 author: "Sarah Abdeldayem"
 description: "The 9-to-5 is extinct. Discover the AI-powered tools and async strategies that are defining the future of remote work in 2025. Is your company ready?"
