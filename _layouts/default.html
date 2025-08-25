@@ -1,16 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      background: #111827;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #f9fafb;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1f2937;
+      color: #9ca3af;
+      margin-top: 2rem;
+    }
+
+    h1, h2, h3 {
+      color: #111827;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .post-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .post-list li {
+      background: #fff;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .post-list li a {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .post-list li span {
+      display: block;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>{{ site.title }}</h1>
+  </header>
+
   <nav>
-    <a href="{{ '/' | relative_url }}">Home</a> |
+    <a href="{{ '/' | relative_url }}">Home</a>
     <a href="{{ '/blog.html' | relative_url }}">Blog</a>
   </nav>
-  <hr>
-  {{ content }}
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+  </footer>
 </body>
 </html>
+
 
