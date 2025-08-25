@@ -13,7 +13,7 @@
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@sarahstudio0">
+  <meta name="twitter:creator" content="@yourtwitterhandle">
 
   <!-- Favicon (optimized version) -->
   <link rel="icon" href="{{ '/images/logo00.png' | relative_url }}" type="image/png">
@@ -53,7 +53,6 @@
       --light-bg: #f8fafc;
       --card-bg: #ffffff;
       --gradient: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
-      --header-height: 70px;
     }
 
     * {
@@ -66,7 +65,7 @@
       font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f0f9f9 0%, #fce7f3 50%, #f3e8ff 100%);
+      background: linear-gradient(135deg, #f0f9f9, #fce7f3, #f3e8ff);
       color: var(--text-color);
       line-height: 1.7;
       min-height: 100vh;
@@ -78,25 +77,23 @@
     header {
       background: var(--gradient);
       color: var(--text-color);
-      padding: 0.5rem 2rem;
+      padding: 1rem 2rem;
+      text-align: center;
       font-weight: 600;
       letter-spacing: 0.5px;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 100;
-      height: var(--header-height);
-      display: flex;
-      align-items: center;
     }
 
     .header-container {
-      max-width: 1200px;
-      width: 100%;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .site-title {
@@ -115,55 +112,35 @@
 
     .nav-links {
       display: flex;
-      gap: 1.8rem;
-      align-items: center;
+      gap: 1.5rem;
     }
 
     header a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      padding: 0.5rem 0.8rem;
-      border-radius: 8px;
-      position: relative;
+      transition: color 0.3s;
+      padding: 0.5rem;
+      border-radius: 4px;
     }
 
-    header a:not(.subscribe-btn):hover {
+    header a:hover {
       color: var(--primary-color);
-      background: rgba(255, 255, 255, 0.4);
-    }
-
-    header a:not(.subscribe-btn)::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    header a:not(.subscribe-btn):hover::after {
-      width: 80%;
+      background: rgba(255, 255, 255, 0.3);
     }
 
     /* Subscribe CTA in header */
     .subscribe-btn {
       background: var(--primary-color);
       color: white !important;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
       transition: all 0.3s;
-      box-shadow: 0 4px 6px rgba(107, 33, 182, 0.2);
     }
 
     .subscribe-btn:hover {
       background: #5b21b6;
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(107, 33, 182, 0.3);
     }
 
     /* Mobile menu button */
@@ -174,29 +151,26 @@
       font-size: 1.5rem;
       cursor: pointer;
       color: var(--text-color);
-      z-index: 101;
     }
 
     /* Category Filter */
     .category-filter {
       text-align: center;
-      margin: 2rem 0 1.5rem;
+      margin: 1.5rem 0;
       padding: 0 1rem;
     }
 
     .filter-btn {
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
       margin: 0.4rem;
-      padding: 0.6rem 1.4rem;
-      border-radius: 25px;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
       background: #f3f4f6;
       color: #374151;
       text-decoration: none;
       font-size: 0.95rem;
-      transition: all 0.3s ease;
+      transition: all 0.2s;
       border: 1px solid transparent;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     .filter-btn:hover,
@@ -204,13 +178,13 @@
       background: var(--primary-color);
       color: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 5px 12px rgba(107, 33, 182, 0.25);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     /* Ad space */
     .ad-container {
       max-width: 728px;
-      margin: 1.5rem auto;
+      margin: 1rem auto;
       padding: 0 1rem;
       display: flex;
       justify-content: center;
@@ -218,66 +192,62 @@
 
     .ad-unit {
       background: #f8fafc;
-      border-radius: 12px;
-      padding: 1.2rem;
+      border-radius: 8px;
+      padding: 1rem;
       text-align: center;
       width: 100%;
       min-height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px dashed #d1d5db;
-      font-size: 0.9rem;
-      color: #6b7280;
+      border: 1px dashed #cbd5e1;
     }
 
     /* Main content */
     main {
-      max-width: 1200px;
-      margin: 1rem auto 2rem;
-      padding: 0 1.5rem;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
       flex: 1;
     }
 
     .blog-container {
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      padding: 2rem;
       backdrop-filter: blur(10px);
-      margin-bottom: 2rem;
     }
 
     h1 {
       text-align: center;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       color: var(--primary-color);
       margin-bottom: 2rem;
       line-height: 1.2;
-      font-weight: 800;
     }
 
     /* Post Grid */
     .post-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.8rem;
     }
 
     .post-card {
       background: var(--card-bg);
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
       display: flex;
       flex-direction: column;
       height: 100%;
     }
 
     .post-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     }
 
     .thumbnail-container {
@@ -290,39 +260,38 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.3s;
     }
 
     .post-card:hover .thumbnail {
-      transform: scale(1.08);
+      transform: scale(1.05);
     }
 
     .post-category {
       position: absolute;
-      top: 12px;
-      right: 12px;
+      top: 10px;
+      right: 10px;
       background: var(--primary-color);
       color: white;
-      padding: 0.4rem 0.9rem;
-      border-radius: 15px;
+      padding: 0.3rem 0.7rem;
+      border-radius: 12px;
       font-size: 0.75rem;
-      font-weight: 700;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      font-weight: 600;
     }
 
     .post-info {
-      padding: 1.5rem;
+      padding: 1.2rem;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
 
     .post-title {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--text-color);
       text-decoration: none;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
       line-height: 1.3;
     }
 
@@ -331,19 +300,19 @@
     }
 
     .post-meta {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--primary-color);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
 
     .post-excerpt {
       flex: 1;
       font-size: 0.95rem;
       color: #4b5563;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       line-height: 1.6;
     }
 
@@ -358,58 +327,49 @@
       color: var(--primary-color);
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s;
-      display: inline-flex;
+      transition: color 0.2s;
+      display: flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid transparent;
+      gap: 0.3rem;
     }
 
     .read-more:hover {
       color: var(--secondary-color);
-      border-bottom: 1px solid var(--secondary-color);
     }
 
     .reading-time {
       font-size: 0.8rem;
       color: #6b7280;
-      background: #f3f4f6;
-      padding: 0.3rem 0.6rem;
-      border-radius: 10px;
     }
 
     /* Newsletter CTA */
     .newsletter-cta {
       background: var(--gradient);
-      border-radius: 18px;
-      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      padding: 2.5rem;
       margin: 3rem 0;
       text-align: center;
       color: var(--text-color);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     .newsletter-cta h2 {
       margin-bottom: 1rem;
       color: var(--text-color);
-      font-size: 1.8rem;
     }
 
     .newsletter-form {
       display: flex;
       max-width: 500px;
-      margin: 1.5rem auto 0;
-      gap: 0.8rem;
+      margin: 0 auto;
+      gap: 0.5rem;
     }
 
     .newsletter-form input {
       flex: 1;
-      padding: 0.9rem 1.2rem;
+      padding: 0.8rem 1rem;
       border: none;
       border-radius: 30px;
       font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
     .newsletter-form button {
@@ -417,52 +377,37 @@
       color: white;
       border: none;
       border-radius: 30px;
-      padding: 0 1.8rem;
+      padding: 0 1.5rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 4px 10px rgba(107, 33, 182, 0.3);
     }
 
     .newsletter-form button:hover {
       background: #5b21b6;
-      transform: translateY(-2px);
     }
 
     /* Footer */
     footer {
       background: var(--gradient);
       color: var(--text-color);
-      padding: 3rem 1.5rem 2rem;
+      padding: 2rem 1rem;
       text-align: center;
       margin-top: 3rem;
     }
 
     .footer-content {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
+      gap: 2rem;
       text-align: left;
     }
 
     .footer-section h3 {
-      margin-bottom: 1.2rem;
-      font-size: 1.3rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .footer-section h3::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--primary-color);
-      border-radius: 2px;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
     }
 
     .footer-links {
@@ -470,149 +415,91 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.5rem;
     }
 
     .footer-links a {
       color: var(--text-color);
       text-decoration: none;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      transition: color 0.3s;
     }
 
     .footer-links a:hover {
       color: var(--primary-color);
-      transform: translateX(5px);
     }
 
     .social-links {
       display: flex;
       gap: 1rem;
-      margin-top: 1.2rem;
+      margin-top: 1rem;
     }
 
     .social-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 255, 255, 0.25);
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 50%;
       color: var(--text-color);
       transition: all 0.3s;
-      font-size: 1.1rem;
     }
 
     .social-links a:hover {
       background: var(--primary-color);
       color: white;
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(107, 33, 182, 0.3);
+      transform: translateY(-3px);
     }
 
     .copyright {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
       border-top: 1px solid rgba(0,0,0,0.1);
       font-size: 0.9rem;
-      opacity: 0.8;
     }
 
     /* Affiliate disclaimer */
     .affiliate-disclaimer {
       background: #fef3c7;
       border-left: 4px solid #f59e0b;
-      padding: 1.2rem;
-      margin: 1.8rem 0;
-      border-radius: 8px;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
       font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    /* Back to top button */
-    .back-to-top {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 50px;
-      height: 50px;
-      background: var(--primary-color);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(107, 33, 182, 0.3);
-      transition: all 0.3s;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 99;
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      background: #5b21b6;
-      transform: translateY(-5px);
     }
 
     /* Responsive Design */
-    @media (max-width: 900px) {
-      .post-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
-    }
-
     @media (max-width: 768px) {
       .header-container {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 1rem;
       }
 
       .menu-toggle {
         display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
       }
 
       .nav-links {
-        position: fixed;
-        top: var(--header-height);
-        left: 0;
+        display: none;
         width: 100%;
-        background: var(--gradient);
         flex-direction: column;
-        padding: 1.5rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s ease;
-        gap: 1rem;
+        gap: 0.5rem;
       }
 
       .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        display: flex;
       }
 
       h1 {
-        font-size: 2.2rem;
-      }
-
-      .blog-container {
-        padding: 2rem;
+        font-size: 2rem;
       }
 
       .post-grid {
         grid-template-columns: 1fr;
-        gap: 1.8rem;
       }
 
       .newsletter-form {
@@ -622,43 +509,22 @@
       .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
-      }
-
-      .footer-section h3::after {
-        left: 50%;
-        transform: translateX(-50%);
       }
     }
 
     @media (max-width: 480px) {
       header {
-        padding: 0.5rem 1rem;
+        padding: 1rem;
       }
 
       .blog-container {
         padding: 1.5rem;
-        border-radius: 16px;
-      }
-
-      h1 {
-        font-size: 1.9rem;
       }
 
       .category-filter {
         overflow-x: auto;
         white-space: nowrap;
         padding-bottom: 0.5rem;
-        justify-content: flex-start;
-        display: flex;
-      }
-
-      .newsletter-cta {
-        padding: 2rem 1.5rem;
-      }
-
-      .footer-section h3 {
-        font-size: 1.2rem;
       }
     }
   </style>
@@ -666,22 +532,12 @@
 <body>
   <header>
     <div class="header-container">
-      <h1 class="site-title">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ '/images/logo00.png' | relative_url }}" alt="{{ site.title }}" height="30">
-          {{ site.title }}
-        </a>
-      </h1>
-
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
 
       <nav class="nav-links">
         <a href="{{ '/' | relative_url }}">🏠 Home</a>
         <a href="{{ '/blog.html' | relative_url }}">📝 Blog</a>
-        <a href="{{ '/projects.html' | relative_url }}">💼 Projects</a>
-        <a href="{{ '/about.html' | relative_url }}">👤 About</a>
-        <a href="{{ '/contact.html' | relative_url }}">📧 Contact</a>
-        <a href="#newsletter" class="subscribe-btn">📩 Subscribe</a>
+       <!-- <a href="#newsletter" class="subscribe-btn">Subscribe</a> -->
       </nav>
     </div>
   </header>
@@ -690,13 +546,13 @@
   <div class="ad-container">
     <div class="ad-unit">
       <!-- Ad code will go here -->
-      <p>Advertisement 📢</p>
+      <p>Advertisement</p>
     </div>
   </div>
 
   <!-- Category Filter -->
   <div class="category-filter">
-    <a class="filter-btn active" href="{{ '/blog.html' | relative_url }}">📂 All</a>
+    <a class="filter-btn active" href="{{ '/blog.html' | relative_url }}">All</a>
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
       <a class="filter-btn" href="{{ '/categories/' | append: category[0] | relative_url }}">
@@ -710,40 +566,37 @@
       <!-- Affiliate disclaimer for monetized content -->
       {% if page.affiliate == true %}
       <div class="affiliate-disclaimer">
-        <strong>📝 Disclosure:</strong> This post may contain affiliate links, meaning I get a commission if you decide to make a purchase through my links, at no cost to you.
+        <strong>Disclosure:</strong> This post may contain affiliate links, meaning I get a commission if you decide to make a purchase through my links, at no cost to you.
       </div>
       {% endif %}
 
-      {{ content }}
+      {{ content | replace: '<a ', '<a target="_blank" rel="nofollow" ' }}
     </div>
 
-    <!-- Newsletter Signup -->
+    <!-- Newsletter Signup -
     <section id="newsletter" class="newsletter-cta">
-      <h2>📬 Stay Updated with the Latest Trends</h2>
+      <h2>Stay Updated with the Latest Trends</h2>
       <p>Subscribe to my newsletter and never miss a post about healthcare analytics, AI, and data science.</p>
       <form class="newsletter-form" action="https://buttondown.email/api/emails/embed-subscribe/sarah_abdeldayem" method="POST">
         <input type="email" name="email" placeholder="Your email address" required aria-label="Your email address">
         <button type="submit">Subscribe</button>
       </form>
-      <p><small>🔒 No spam. Unsubscribe at any time.</small></p>
-    </section>
+      <p><small>No spam. Unsubscribe at any time.</small></p>
+    </section> -->
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="footer-section">
         <h3>About</h3>
-        <p>Sarah Abdeldayem is a healthcare data analyst and bioinformatician passionate about using data to improve patient outcomes. 📊</p>
+        <p>Sarah Abdeldayem is a healthcare data analyst and bioinformatician passionate about using data to improve patient outcomes.</p>
       </div>
 
       <div class="footer-section">
         <h3>Quick Links</h3>
         <ul class="footer-links">
-          <li><a href="{{ '/' | relative_url }}">🏠 Home</a></li>
-          <li><a href="{{ '/blog.html' | relative_url }}">📝 Blog</a></li>
-          <li><a href="{{ '/projects.html' | relative_url }}">💼 Projects</a></li>
-          <li><a href="{{ '/about.html' | relative_url }}">👤 About</a></li>
-          <li><a href="{{ '/contact.html' | relative_url }}">📧 Contact</a></li>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
         </ul>
       </div>
 
@@ -758,55 +611,22 @@
 
         <h3>Monetization</h3>
         <ul class="footer-links">
-          <li><a href="{{ '/sponsorships.html' | relative_url }}">🤝 Sponsorships</a></li>
-          <li><a href="{{ '/consulting.html' | relative_url }}">💼 Consulting</a></li>
-          <li><a href="{{ '/affiliates.html' | relative_url }}">🔗 Affiliate Disclosure</a></li>
+          <li><a href="{{ '/sponsorships.html' | relative_url }}">Sponsorships</a></li>
+          <li><a href="{{ '/consulting.html' | relative_url }}">Consulting</a></li>
+          <li><a href="{{ '/affiliates.html' | relative_url }}">Affiliate Disclosure</a></li>
         </ul>
       </div>
     </div>
 
     <div class="copyright">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved. ✨</p>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
     </div>
   </footer>
-
-  <a href="#" class="back-to-top">↑</a>
 
   <script>
     // Mobile menu toggle
     document.querySelector('.menu-toggle').addEventListener('click', function() {
       document.querySelector('.nav-links').classList.toggle('active');
-      this.setAttribute('aria-expanded',
-        document.querySelector('.nav-links').classList.contains('active'));
-    });
-
-    // Back to top button
-    const backToTopButton = document.querySelector('.back-to-top');
-
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('visible');
-      } else {
-        backToTopButton.classList.remove('visible');
-      }
-    });
-
-    backToTopButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      const navLinks = document.querySelector('.nav-links');
-      const menuToggle = document.querySelector('.menu-toggle');
-
-      if (navLinks.classList.contains('active') &&
-          !navLinks.contains(e.target) &&
-          !menuToggle.contains(e.target)) {
-        navLinks.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
     });
 
     // Lazy loading for images
