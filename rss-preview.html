@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSS Feed Preview</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+    h1 { text-align: center; }
+    .post { border-bottom: 1px solid #ccc; padding: 15px 0; }
+    .post h2 { margin: 0; font-size: 1.4em; }
+    .post p { margin: 5px 0; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>Sarah Abdeldayem Blog - RSS Preview</h1>
+  <div id="feed"></div>
+
+  <script>
+    const feedUrl = "https://sarora2200.github.io/SARAH_ABDELDAYEM/feed.xml";
+
+    fetch(feedUrl)
+      .then(response => response.text())
+      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(data => {
+        const items = data.querySelectorAll("entry");
+        let html = "";
+        items.forEach(el => {
+          const title = el.querySelector("title").textContent;
+          const link = el.querySelector("link").getAttribute("href");
+          const summary = el.querySelector("summary")?.textContent || "";
+          html += `
+            <div class="post">
+              <h2><a href="${link}" target="_blank">${title}</a></h2>
+              <p>${summary}</p>
+            </div>
+          `;
+        });
+        document.getElementById("feed").innerHTML = html;
+      })
+      .catch(err => console.error("Error loading RSS feed:", err));
+  </script>
+</body>
+</html>
