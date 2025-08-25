@@ -4,91 +4,227 @@
   <meta charset="UTF-8">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
-  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="48x48">
-  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="64x64">
-  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="128x128">
-  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="256x256">
-  <link rel="icon" href="/images/logo00.png" type="image/png" sizes="512x512">
-  <link rel="apple-touch-icon" href="/images/logo00.png" sizes="180x180">
-  <link rel="mask-icon" href="/images/logo00.png" color="#ff6347">
+  <meta name="description" content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- SEO & Social Media Meta Tags -->
+  <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
+  <meta property="og:image" content="{{ site.url }}/images/{{ page.image | default: 'default-social.jpg' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@yourtwitterhandle">
+
+  <!-- Favicon (optimized version) -->
+  <link rel="icon" href="{{ '/images/logo00.png' | relative_url }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ '/images/logo00.png' | relative_url }}">
+  <link rel="mask-icon" href="{{ '/images/logo00.png' | relative_url }}" color="#6d28d9">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ '/style.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  </noscript>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ page.title }}",
+    "description": "{{ page.description }}",
+    "author": {
+      "@type": "Person",
+      "name": "Sarah Abdeldayem"
+    },
+    "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+    "image": "{{ site.url }}/images/{{ page.image }}"
+  }
+  </script>
 
   <style>
+    :root {
+      --primary-color: #6d28d9;
+      --secondary-color: #ec4899;
+      --accent-color: #a7f3d0;
+      --text-color: #2d2d2d;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --gradient: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #f0f9f9, #fce7f3, #f3e8ff);
-      color: #2d2d2d;
+      color: var(--text-color);
       line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* Header Styles */
     header {
-      background: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
-      color: #2d2d2d;
+      background: var(--gradient);
+      color: var(--text-color);
       padding: 1rem 2rem;
       text-align: center;
       font-weight: 600;
       letter-spacing: 0.5px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .site-title a {
+      color: var(--text-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
     }
 
     header a {
-      color: #2d2d2d;
+      color: var(--text-color);
       text-decoration: none;
-      font-weight: bold;
-      margin: 0 0.5rem;
+      font-weight: 600;
+      transition: color 0.3s;
+      padding: 0.5rem;
+      border-radius: 4px;
     }
 
     header a:hover {
-      color: #6d28d9;
+      color: var(--primary-color);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Subscribe CTA in header */
+    .subscribe-btn {
+      background: var(--primary-color);
+      color: white !important;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+
+    .subscribe-btn:hover {
+      background: #5b21b6;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-color);
     }
 
     /* Category Filter */
     .category-filter {
       text-align: center;
       margin: 1.5rem 0;
+      padding: 0 1rem;
     }
+
     .filter-btn {
       display: inline-block;
-      margin: 0 0.4rem;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      margin: 0.4rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
       background: #f3f4f6;
       color: #374151;
       text-decoration: none;
       font-size: 0.95rem;
       transition: all 0.2s;
-    }
-    .filter-btn:hover {
-      background: #6d28d9;
-      color: #fff;
+      border: 1px solid transparent;
     }
 
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Ad space */
+    .ad-container {
+      max-width: 728px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ad-unit {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      width: 100%;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed #cbd5e1;
+    }
+
+    /* Main content */
     main {
       max-width: 1100px;
       margin: 2rem auto;
       padding: 0 1rem;
+      flex: 1;
     }
 
     .blog-container {
-      background: #ffffffdd;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 18px;
       box-shadow: 0 10px 28px rgba(0,0,0,0.08);
       padding: 2rem;
+      backdrop-filter: blur(10px);
     }
 
     h1 {
       text-align: center;
-      font-size: 2.7rem;
-      color: #6d28d9;
+      font-size: 2.5rem;
+      color: var(--primary-color);
       margin-bottom: 2rem;
+      line-height: 1.2;
     }
 
     /* Post Grid */
@@ -99,82 +235,334 @@
     }
 
     .post-card {
-      background: #fff;
+      background: var(--card-bg);
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       transition: transform 0.25s, box-shadow 0.25s;
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
+
     .post-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     }
 
+    .thumbnail-container {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+
     .thumbnail {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
       transition: transform 0.3s;
     }
+
     .post-card:hover .thumbnail {
-      transform: scale(1.03);
+      transform: scale(1.05);
+    }
+
+    .post-category {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
     }
 
     .post-info {
-      padding: 1rem 1.2rem;
+      padding: 1.2rem;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
 
     .post-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #2d2d2d;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-color);
       text-decoration: none;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
       line-height: 1.3;
     }
+
     .post-title:hover {
-      color: #ec4899;
+      color: var(--secondary-color);
     }
 
     .post-meta {
-      font-size: 0.9rem;
-      color: #6d28d9;
+      font-size: 0.85rem;
+      color: var(--primary-color);
       margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .post-excerpt {
       flex: 1;
       font-size: 0.95rem;
-      color: #444;
-      margin-bottom: 0.8rem;
+      color: #4b5563;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
     }
 
     .read-more {
-      align-self: flex-start;
-      color: #7D4E85;
+      color: var(--primary-color);
       font-weight: 600;
       text-decoration: none;
       transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
+
     .read-more:hover {
-      color: #c45dbc;
+      color: var(--secondary-color);
+    }
+
+    .reading-time {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* Newsletter CTA */
+    .newsletter-cta {
+      background: var(--gradient);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      text-align: center;
+      color: var(--text-color);
+    }
+
+    .newsletter-cta h2 {
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 0.5rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+    }
+
+    .newsletter-form button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 0 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .newsletter-form button:hover {
+      background: #5b21b6;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--gradient);
+      color: var(--text-color);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: var(--text-color);
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      font-size: 0.9rem;
+    }
+
+    /* Affiliate disclaimer */
+    .affiliate-disclaimer {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .post-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 1rem;
+      }
+
+      .blog-container {
+        padding: 1.5rem;
+      }
+
+      .category-filter {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="{{ '/' | relative_url }}" target="_blank">🏠 Home</a> |
-    <a href="{{ '/blog.html' | relative_url }}" target="_blank">📝 Blog</a>
+    <div class="header-container">
+      <h1 class="site-title">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/images/logo00.png' | relative_url }}" alt="{{ site.title }}" height="30">
+          {{ site.title }}
+        </a>
+      </h1>
+
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <nav class="nav-links">
+        <a href="{{ '/' | relative_url }}">🏠 Home</a>
+        <a href="{{ '/blog.html' | relative_url }}">📝 Blog</a>
+        <a href="{{ '/projects.html' | relative_url }}">💼 Projects</a>
+        <a href="{{ '/about.html' | relative_url }}">👤 About</a>
+        <a href="{{ '/contact.html' | relative_url }}">📧 Contact</a>
+        <a href="#newsletter" class="subscribe-btn">Subscribe</a>
+      </nav>
+    </div>
   </header>
+
+  <!-- Ad Space -->
+  <div class="ad-container">
+    <div class="ad-unit">
+      <!-- Ad code will go here -->
+      <p>Advertisement</p>
+    </div>
+  </div>
 
   <!-- Category Filter -->
   <div class="category-filter">
-    <a class="filter-btn" href="{{ '/blog.html' | relative_url }}">All</a>
+    <a class="filter-btn active" href="{{ '/blog.html' | relative_url }}">All</a>
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
       <a class="filter-btn" href="{{ '/categories/' | append: category[0] | relative_url }}">
@@ -185,8 +573,84 @@
 
   <main>
     <div class="blog-container">
+      <h1>{{ page.title }}</h1>
+
+      <!-- Affiliate disclaimer for monetized content -->
+      {% if page.affiliate == true %}
+      <div class="affiliate-disclaimer">
+        <strong>Disclosure:</strong> This post may contain affiliate links, meaning I get a commission if you decide to make a purchase through my links, at no cost to you.
+      </div>
+      {% endif %}
+
       {{ content | replace: '<a ', '<a target="_blank" rel="nofollow" ' }}
     </div>
+
+    <!-- Newsletter Signup -->
+    <section id="newsletter" class="newsletter-cta">
+      <h2>Stay Updated with the Latest Trends</h2>
+      <p>Subscribe to my newsletter and never miss a post about healthcare analytics, AI, and data science.</p>
+      <form class="newsletter-form" action="https://youremailservice.com/subscribe" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required aria-label="Your email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p><small>No spam. Unsubscribe at any time.</small></p>
+    </section>
   </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Sarah Abdeldayem is a healthcare data analyst and bioinformatician passionate about using data to improve patient outcomes.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+          <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/yourprofile" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/yourprofile" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="{{ '/rss.xml' | relative_url }}" aria-label="RSS Feed"><i class="fas fa-rss"></i></a>
+        </div>
+
+        <h3>Monetization</h3>
+        <ul class="footer-links">
+          <li><a href="{{ '/sponsorships.html' | relative_url }}">Sponsorships</a></li>
+          <li><a href="{{ '/consulting.html' | relative_url }}">Consulting</a></li>
+          <li><a href="{{ '/affiliates.html' | relative_url }}">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img => {
+        img.src = img.dataset.src;
+      });
+    }
+  </script>
 </body>
 </html>
