@@ -269,8 +269,8 @@
 <body>
   <header>
     <nav class="nav-container" aria-label="Main navigation">
-      <a href="{{ '/' | relative_url }}" target="_blank">🏠 Home</a>
-      <a href="{{ '/blog.html' | relative_url }}" target="_blank">📝 Blog</a>
+      <a href="{{ '/' | relative_url }}" >🏠 Home</a>
+      <a href="{{ '/blog.html' | relative_url }}" >📝 Blog</a>
     </nav>
   </header>
 
@@ -297,7 +297,7 @@
       {{ content | replace: '<a ', '<a target="_blank" rel="nofollow" ' }}
     </div>
 
-    <a href="{{ '/blog.html' | relative_url }}" class="back-home" target="_blank">⬅ Back to Blog</a>
+    <a href="{{ '/blog.html' | relative_url }}" class="back-home">⬅ Back to Blog</a>
   </div>
 
   <footer>
