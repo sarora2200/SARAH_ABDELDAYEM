@@ -6,7 +6,7 @@ categories:
   - healthcare
   - analytics
   - trends
-image: /assests/images/healthcare-analytics-trends.jpg
+image: healthcare-analytics-trends.jpg
 author: "Sarah Abdeldayem"
 ---
 
