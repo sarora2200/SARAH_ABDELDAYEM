@@ -72,4 +72,4 @@ While challenges remain, the trajectory is clear: the future of medicine will be
 
 **👉 Stay curious. The intersection of biology and data science is where the next decade of medical breakthroughs will happen.**
 
-*Want to discuss more? Connect with me on [LinkedIn](https://www.linkedin.com/in/sarah-abdeldayem/) to talk about the future of bioinformatics.*
+*Want to discuss more? Connect with me on [LinkedIn](https://www.linkedin.com/in/sarah-a-abdeldayem/) to talk about the future of bioinformatics.*
