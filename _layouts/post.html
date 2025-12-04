@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
+    <meta charset="UTF-8">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
 
-  <!-- SEO & Social Media Meta Tags -->
-  <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
-  <meta property="og:description" content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
-  <meta property="og:image" content="{{ site.url }}/images/{{ page.image | default: 'default-social.jpg' }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@yourtwitterhandle">
+    <!-- SEO & Social Media Meta Tags -->
+    <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
+    <meta property="og:description"
+        content="{{ page.description | default: 'Explore insights on healthcare analytics, bioinformatics, and data science from Sarah Abdeldayem.' }}">
+    <meta property="og:image" content="{{ site.url }}/images/{{ page.image | default: 'default-social.jpg' }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@yourtwitterhandle">
 
-  <!-- Favicon (optimized version) -->
-  <link rel="icon" href="{{ '/images/logo00.png' | relative_url }}" type="image/png">
-  <link rel="apple-touch-icon" href="{{ '/images/logo00.png' | relative_url }}">
-  <link rel="mask-icon" href="{{ '/images/logo00.png' | relative_url }}" color="#6d28d9">
+    <!-- Favicon (optimized version) -->
+    <link rel="icon" href="{{ '/images/logo00.png' | relative_url }}" type="image/png">
+    <link rel="apple-touch-icon" href="{{ '/images/logo00.png' | relative_url }}">
+    <link rel="mask-icon" href="{{ '/images/logo00.png' | relative_url }}" color="#6d28d9">
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="{{ '/style.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
-  </noscript>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ '/style.css' | relative_url }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    </noscript>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -43,265 +48,273 @@
     "image": "{{ site.url }}/images/{{ page.image }}"
   }
   </script>
-  <style>
-    :root {
-      --primary-color: #6d28d9;
-      --secondary-color: #ec4899;
-      --background-gradient: linear-gradient(135deg, #f0f9f9, #fce7f3, #f3e8ff);
-      --header-gradient: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
-      --text-color: #2d2d2d;
-      --shadow-light: 0 2px 8px rgba(0,0,0,0.1);
-      --shadow-medium: 0 6px 16px rgba(0,0,0,0.1);
-      --shadow-heavy: 0 8px 24px rgba(0,0,0,0.08);
-      --transition: all 0.3s ease;
-    }
+    <style>
+        :root {
+            --primary-color: #6d28d9;
+            --secondary-color: #ec4899;
+            --background-gradient: linear-gradient(135deg, #f0f9f9, #fce7f3, #f3e8ff);
+            --header-gradient: linear-gradient(90deg, #a7f3d0, #fbcfe8, #c4b5fd);
+            --text-color: #2d2d2d;
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 6px 16px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--background-gradient);
-      color: var(--text-color);
-      line-height: 1.7;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background-gradient);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    header {
-      background: var(--header-gradient);
-      color: var(--text-color);
-      padding: 1rem 2rem;
-      text-align: center;
-      font-weight: 600;
-      box-shadow: var(--shadow-light);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(5px);
-    }
+        header {
+            background: var(--header-gradient);
+            color: var(--text-color);
+            padding: 1rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
 
-    .nav-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-    header a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        header a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    header a:hover, header a:focus {
-      color: var(--primary-color);
-      background: rgba(255, 255, 255, 0.5);
-      transform: translateY(-2px);
-      outline: none;
-    }
+        header a:hover,
+        header a:focus {
+            color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            outline: none;
+        }
 
-    .post-container {
-      max-width: min(850px, 90%);
-      margin: 2rem auto;
-      padding: 2.5rem;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: var(--shadow-heavy);
-      flex: 1;
-    }
+        .post-container {
+            max-width: min(850px, 90%);
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: var(--shadow-heavy);
+            flex: 1;
+        }
 
-    h1 {
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: var(--primary-color);
-      line-height: 1.3;
-    }
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
 
-    .post-meta {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
-      color: #666;
-    }
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: #666;
+        }
 
-    .post-meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
 
-    .post-banner {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      margin-bottom: 2.5rem;
-      box-shadow: var(--shadow-medium);
-      transition: var(--transition);
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
+        .post-banner {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
 
-    .post-banner:hover {
-      transform: scale(1.01);
-    }
+        .post-banner:hover {
+            transform: scale(1.01);
+        }
 
-    .post-content {
-      font-size: 1.1rem;
-    }
+        .post-content {
+            font-size: 1.1rem;
+        }
 
-    .post-content p {
-      margin-bottom: 1.5rem;
-    }
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
 
-    .post-content a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 2px solid transparent;
-      transition: var(--transition);
-    }
+        .post-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+        }
 
-    .post-content a:hover, .post-content a:focus {
-      color: var(--secondary-color);
-      border-bottom-color: var(--secondary-color);
-    }
+        .post-content a:hover,
+        .post-content a:focus {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
 
-    .back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 2.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      color: var(--primary-color);
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      transition: var(--transition);
-      background: rgba(109, 40, 217, 0.1);
-    }
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            background: rgba(109, 40, 217, 0.1);
+        }
 
-    .back-home:hover, .back-home:focus {
-      color: white;
-      background: var(--primary-color);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-medium);
-      outline: none;
-    }
+        .back-home:hover,
+        .back-home:focus {
+            color: white;
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            outline: none;
+        }
 
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      background: var(--header-gradient);
-      color: var(--text-color);
-      font-size: 0.9rem;
-    }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            background: var(--header-gradient);
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header {
-        padding: 1rem;
-      }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
 
-      .post-container {
-        padding: 1.5rem;
-        margin: 1.5rem auto;
-      }
+            .post-container {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+            }
 
-      .post-meta {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-      }
-    }
+            .post-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
 
-    @media (max-width: 480px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
+        @media (max-width: 480px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
 
-      .post-container {
-        padding: 1.2rem;
-      }
-    }
+            .post-container {
+                padding: 1.2rem;
+            }
+        }
 
-    /* Reduced motion for accessibility */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        transition: none !important;
-      }
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
 
-      .post-banner:hover {
-        transform: none;
-      }
+            .post-banner:hover {
+                transform: none;
+            }
 
-      header a:hover, .back-home:hover {
-        transform: none;
-      }
-    }
+            header a:hover,
+            .back-home:hover {
+                transform: none;
+            }
+        }
 
-    /* Focus styles for accessibility */
-    a:focus, button:focus {
-      outline: 2px solid var(--primary-color);
-      outline-offset: 2px;
-    }
-  </style>
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <nav class="nav-container" aria-label="Main navigation">
-      <a href="{{ '/' | relative_url }}" >🏠 Home</a>
-      <a href="{{ '/blog.html' | relative_url }}" >📝 Blog</a>
-    </nav>
-  </header>
+    <header>
+        <nav class="nav-container" aria-label="Main navigation">
+            <a href="{{ '/' | relative_url }}">🏠 Home</a>
+            <a href="{{ '/blog.html' | relative_url }}">📝 Blog</a>
+        </nav>
+    </header>
 
-  <div class="post-container">
-    <h1>{{ page.title }}</h1>
+    <div class="post-container">
+        <h1>{{ page.title }}</h1>
 
-    <div class="post-meta">
-      {% if page.date %}
-        <span>📅 {{ page.date | date: "%B %d, %Y" }}</span>
-      {% endif %}
-      {% if page.author %}
-        <span>👤 {{ page.author }}</span>
-      {% endif %}
-      {% if page.read_time %}
-        <span>⏱️ {{ page.read_time }} min read</span>
-      {% endif %}
+        <div class="post-meta">
+            {% if page.date %}
+            <span>📅 {{ page.date | date: "%B %d, %Y" }}</span>
+            {% endif %}
+            {% if page.author %}
+            <span>👤 {{ page.author }}</span>
+            {% endif %}
+            {% if page.read_time %}
+            <span>⏱️ {{ page.read_time }} min read</span>
+            {% endif %}
+        </div>
+
+        {% if page.image %}
+        <img src="{{ '/assests/images/' | append: page.image | relative_url }}" alt="{{ page.title }}"
+            class="post-banner" loading="lazy">
+        {% endif %}
+
+        <div class="post-content">
+            {{ content | replace: '<a ', ' <a target="_blank" rel="nofollow" ' }}
     </div>
 
-    {% if page.image %}
-      <img src="{{ '/assests/images/' | append: page.image | relative_url }}" alt="{{ page.title }}" class="post-banner" loading="lazy">
-    {% endif %}
+    <a href="{{ ' /blog.html' | relative_url }}" class="back-home">⬅ Back to Blog</a>
+        </div>
 
-    <div class="post-content">
-      {{ content | replace: '<a ', '<a target="_blank" rel="nofollow" ' }}
-    </div>
-
-    <a href="{{ '/blog.html' | relative_url }}" class="back-home">⬅ Back to Blog</a>
-  </div>
-
-  <footer>
-    <p>© {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-  </footer>
+        <footer>
+            <p>© {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        </footer>
 </body>
+
 </html>
