@@ -374,26 +374,8 @@
         <!-- Right Scroll Button -->
         <button class="scroll-button right" aria-label="Scroll right" onclick="scrollProjects(1)">&#8250;</button>
 
-        <!--script>
-            document.querySelector('.scroll-button.left').addEventListener('click', function () {
-                const projectsContent = document.querySelector('.projects-content');
-                projectsContent.scrollBy({
-                    left: -projectsContent.clientWidth, // Scroll by one project width
-                    behavior: 'smooth'
-                });
-            });
-
-            document.querySelector('.scroll-button.right').addEventListener('click', function () {
-                const projectsContent = document.querySelector('.projects-content');
-                projectsContent.scrollBy({
-                    left: projectsContent.clientWidth, // Scroll by one project width
-                    behavior: 'smooth'
-                });
-            });
-        </script-->
-
         <script>
-            document.querySelector('.scroll-button.left').addEventListener('click', function () {
+            document.querySelector('#projects .scroll-button.left').addEventListener('click', function () {
                 const projectsContent = document.querySelector('.projects-content');
                 const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
 
@@ -406,7 +388,7 @@
                 });
             });
 
-            document.querySelector('.scroll-button.right').addEventListener('click', function () {
+            document.querySelector('#projects .scroll-button.right').addEventListener('click', function () {
                 const projectsContent = document.querySelector('.projects-content');
                 const projectCardWidth = document.querySelector('.project-card').offsetWidth + 30; // Width of one card + gap
 
@@ -424,120 +406,137 @@
     <!--نهاية صفحة البروجكت-->
 
 
-    <!--بداية جزء الانجازات-->
-    <section class="achievements-section" id="achievements">
-        <h2 class="title">Achievements</h2>
-        <div class="achievements-content">
+   <!-- بداية جزء الإنجازات -->
+<section class="achievements-section" id="achievements">
 
+    <h2 class="title">Achievements</h2>
 
+    <!-- Left Scroll Button -->
+    <button class="scroll-button left" aria-label="Scroll left">&#8249;</button>
 
-            <!---كارت الانجاز--
-            <div class="achievement-card">
-                <div class="icon">
-                    <a href=""
-                        target="_blank">
-                        <img src="images/00.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <h3>0000</h3>
-                    <p>00000.</p>
-                </div>
+    <div class="achievements-content" id="achievements-container">
+
+        <!-- Achievement 1 -->
+        <div class="achievement-card">
+            <div class="icon">
+                <a href="https://drive.google.com/file/d/1S5ps56htJbW0H9Ps_TjOkgnWCNXNnvJL/view?usp=sharing" target="_blank">
+                    <img src="images/tttazure.png" alt="TTT Azure">
+                </a>
             </div>
-            <!--نهاية كارت الانجاز-->
-
-             <div class="achievement-card">
-                <div class="icon">
-                    <a href="https://drive.google.com/file/d/1S5ps56htJbW0H9Ps_TjOkgnWCNXNnvJL/view?usp=sharing"
-                        target="_blank">
-                        <img src="images/tttazure.png" alt="TTT Azure">
-                    </a>
-                </div>
-                <div class="info">
-                    <h3>TTT Azure Certified</h3>
-                    <p>Successfully completed the TTT Azure program.</p>
-                </div>
+            <div class="info">
+                <h3>TTT Azure Certified</h3>
+                <p>Successfully completed the TTT Azure program.</p>
             </div>
-            <!--نهاية كارت الانجاز-->
-
-
-            <!---كارت الانجاز-->
-            <div class="achievement-card">
-                <div class="icon">
-                    <a href="https://drive.google.com/file/d/15MVCQvtOoToFRkBFEVQlboBDwb7HveAb/view?usp=sharing"
-                        target="_blank">
-                        <img src="images/Alx Data analyst.jpg" alt="Data Analyst">
-                    </a>
-                </div>
-                <div class="info">
-                    <h3>Data Analyst</h3>
-                    <p>Successfully completed a Google Data Analyst course with excellent results.</p>
-                </div>
-            </div>
-            <!--نهاية كارت الانجاز-->
-
-            <!---كارت الانجاز-->
-            <div class="achievement-card">
-                <div class="icon">
-                    <a href="https://drive.google.com/file/d/1bhHAnDS3Y4Hb2J07pKR6ea9b2Gpo6Iym/view?usp=sharing"
-                        target="_blank">
-                        <img src="images/Data Scientist_page-0001.jpg" alt="Data Scientist">
-                    </a>
-                </div>
-                <div class="info">
-                    <h3>Data Scientist</h3>
-                    <p>Successfully completed a Data Scientist course with excellent results.</p>
-                </div>
-            </div>
-            <!--نهاية كارت الانجاز-->
-
-
-            <!---كارت الانجاز-->
-            <div class="achievement-card">
-                <div class="icon">
-                    <a href="https://drive.google.com/file/d/1x3Mh04o5C63Thnt-G_NDZCtASqr81iqx/view?usp=sharing"
-                        target="_blank">
-                        <img src="images/Data Scientist(datacamp)_page-0001.jpg" alt="Data Scientist">
-                    </a>
-                </div>
-                <div class="info">
-                    <h3>Associate Data Scientist</h3>
-                    <p>Successfully completed a Data Scientist course with excellent results.</p>
-                </div>
-            </div>
-            <!--نهاية كارت الانجاز-->
-
-            <!---كارت الانجاز-->
-            <div class="achievement-card">
-                <div class="icon">
-                    <a href="https://drive.google.com/file/d/1gOc5bVQeQxFAs7lrCrioDcaywqi5iqRX/view?usp=sharing"
-                        target="_blank">
-                        <img src="images/Alx SE Certificate.jpg" alt="Software Engineering">
-                    </a>
-                </div>
-                <div class="info">
-                    <h3>Software Engineering</h3>
-                    <p>Graduated from the ALX Software Engineering program with distinction.</p>
-                </div>
-            </div>
-            <!--نهاية كارت الانجاز-->
-            <!---كارت الانجاز-->
-            <div class="achievement-card">
-                <div class="icon">
-                    <a href="https://drive.google.com/file/d/1zysMDMQGy0gJQHGZnisNrvVbknn7tWLn/view?usp=sharing"
-                        target="_blank">
-                        <img src="images/Digital Marketing.png" alt="Digital Marketing">
-                    </a>
-                </div>
-                <div class="info">
-                    <h3>Digital Marketing</h3>
-                    <p>Successfully completed a Digital Marketing course with excellent results.</p>
-                </div>
-            </div>
-            <!--نهاية كارت الانجاز-->
         </div>
-    </section>
-    <!--نهاية جزء الانجازات-->
+
+        <!-- Achievement 2 -->
+        <div class="achievement-card">
+            <div class="icon">
+                <a href="https://drive.google.com/file/d/15MVCQvtOoToFRkBFEVQlboBDwb7HveAb/view?usp=sharing" target="_blank">
+                    <img src="images/Alx Data analyst.jpg" alt="Data Analyst">
+                </a>
+            </div>
+            <div class="info">
+                <h3>Data Analyst</h3>
+                <p>Successfully completed a Google Data Analyst course with excellent results.</p>
+            </div>
+        </div>
+
+        <!-- Achievement 3 -->
+        <div class="achievement-card">
+            <div class="icon">
+                <a href="https://drive.google.com/file/d/1bhHAnDS3Y4Hb2J07pKR6ea9b2Gpo6Iym/view?usp=sharing" target="_blank">
+                    <img src="images/Data Scientist_page-0001.jpg" alt="Data Scientist">
+                </a>
+            </div>
+            <div class="info">
+                <h3>Data Scientist</h3>
+                <p>Successfully completed a Data Scientist course with excellent results.</p>
+            </div>
+        </div>
+
+        <!-- Achievement 4 -->
+        <div class="achievement-card">
+            <div class="icon">
+                <a href="https://drive.google.com/file/d/1x3Mh04o5C63Thnt-G_NDZCtASqr81iqx/view?usp=sharing" target="_blank">
+                    <img src="images/Data Scientist(datacamp)_page-0001.jpg" alt="Associate Data Scientist">
+                </a>
+            </div>
+            <div class="info">
+                <h3>Associate Data Scientist</h3>
+                <p>Successfully completed a Data Scientist course with excellent results.</p>
+            </div>
+        </div>
+
+        <!-- Achievement 5 -->
+        <div class="achievement-card">
+            <div class="icon">
+                <a href="https://drive.google.com/file/d/1gOc5bVQeQxFAs7lrCrioDcaywqi5iqRX/view?usp=sharing" target="_blank">
+                    <img src="images/Alx SE Certificate.jpg" alt="Software Engineering">
+                </a>
+            </div>
+            <div class="info">
+                <h3>Software Engineering</h3>
+                <p>Graduated from the ALX Software Engineering program with distinction.</p>
+            </div>
+        </div>
+
+        <!-- Achievement 6 -->
+        <div class="achievement-card">
+            <div class="icon">
+                <a href="https://drive.google.com/file/d/1zysMDMQGy0gJQHGZnisNrvVbknn7tWLn/view?usp=sharing" target="_blank">
+                    <img src="images/Digital Marketing.png" alt="Digital Marketing">
+                </a>
+            </div>
+            <div class="info">
+                <h3>Digital Marketing</h3>
+                <p>Successfully completed a Digital Marketing course with excellent results.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Right Scroll Button -->
+    <button class="scroll-button right" aria-label="Scroll right">&#8250;</button>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const container = document.getElementById("achievements-container");
+
+    const leftBtn = document.querySelector("#achievements .scroll-button.left");
+    const rightBtn = document.querySelector("#achievements .scroll-button.right");
+
+    function scrollAchievements(direction) {
+
+        const card = document.querySelector("#achievements .achievement-card");
+        if (!card) return;
+
+        const cardWidth = card.offsetWidth + 30;
+
+        const scrollAmount =
+            window.innerWidth <= 768
+                ? cardWidth
+                : container.clientWidth;
+
+        container.scrollBy({
+            left: direction * scrollAmount,
+            behavior: "smooth"
+        });
+    }
+
+    leftBtn.addEventListener("click", () => scrollAchievements(-1));
+    rightBtn.addEventListener("click", () => scrollAchievements(1));
+
+});
+</script>
+
+   <!-- نهاية جزء الإنجازات -->
+
+
+      <!-- بداية جزء التواصل -->
 
     <section class="contact-section" id="contact">
         <h2 class="title">Let's Work Together</h2>
@@ -561,12 +560,14 @@
                 </div>
                 <div class="info">
                     <h3>Phone</h3>
-                    <p>+00 123 456 789</p>
+                    <p>+00</p>
                 </div>
             </div>
             <!-- End Phone Card -->
         </div>
     </section>
+
+          <!-- نهاية جزء التواصل -->
 
     <footer class="footer">
         <p class="footer-title">Copyrights @ <span>Sarah Abdeldayem</span></p>

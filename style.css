@@ -798,60 +798,65 @@ section {
 
 
 /* Achievements Section */
+/* Achievements Section */
+
 .achievements-section {
-    background: linear-gradient(145deg, #fbfbfb, #f9f9f9); /* Soft gradient for modern appeal */
+    background: linear-gradient(145deg, #fbfbfb, #f9f9f9);
     padding: 100px 20px;
     text-align: center;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow to elevate the section */
-    border-radius: 15px; /* Rounded corners for the section */
+    box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    border-radius: 15px;
 }
 
-/* Title Styling */
 .achievements-section .title {
-    display: flex;
-    justify-content: center;
     color: #cc67c6c7;
-    font-size: 2.5em; /* Increased title size for better visibility */
+    font-size: 2.5em;
     font-weight: 800;
-    margin-bottom: 40px; /* Increased margin for better spacing */
-    margin-top: 50px; /* Space above the title */
-    text-transform: uppercase; /* Uppercase title for a more polished look */
-    letter-spacing: 1.5px; /* Added letter spacing for a more refined look */
-    display: inline-block;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     padding-bottom: 10px;
-    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Adds shadow for emphasis */
-    transform: translateY(0); /* Initial position */
+    transition: .3s;
+    text-shadow: 1px 1px 4px rgba(0,0,0,.2);
 }
 
-/* Hover effect for title */
 .achievements-section .title:hover {
-    color: #9b4d96; /* Change text color on hover */
-    transform: translateY(-5px); /* Lift the title on hover */
+    color: #9b4d96;
+    transform: translateY(-5px);
 }
 
-.achievements-section .achievements-content {
+.achievements-content {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px; /* Spacing between achievement cards */
+    justify-content: flex-start;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.achievements-content::-webkit-scrollbar {
+    display: none;
 }
 
 .achievement-card {
-    background-color: #ffffff;
-    width: 270px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    width: calc(100% / 4 - 30px);
+    flex: 0 0 auto;
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    text-align: center; /* Center align the content inside each card */
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    transition: .3s;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .achievement-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,.2);
 }
 
 .achievement-card .icon img {
@@ -863,55 +868,76 @@ section {
 
 .achievement-card .info {
     padding: 20px;
-    text-align: center; /* Center the text within the card info */
 }
 
 .achievement-card .info h3 {
     color: #333;
     font-size: 1.3em;
-    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .achievement-card .info p {
-    color: #555;
-    font-size: 1em;
-    font-weight: 400;
+    color: #666;
     line-height: 1.5;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .achievements-content {
-        gap: 10px; /* Reduce gap for smaller screens */
+/* Mobile */
+
+@media (max-width:768px){
+
+    .achievements-section{
+        padding-top:140px;
     }
 
-    .achievements-card {
-        width: 100%; /* Full width for one card per page on small screens */
-        margin-bottom: 30px;
+    .achievements-content{
+        gap:10px;
     }
 
-    .achievements-section .title {
-        font-size: 2em;
-    }
-}
-
-@media (max-width: 425px) {
-    .achievements-content {
-        gap: 10px;
+    .achievement-card{
+        width:100%;
     }
 
-    .achievements-card {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .achievements-section .title {
-        font-size: 1.8em;
+    .achievements-section .title{
+        font-size:2em;
     }
 }
 
+@media (max-width:480px){
 
+    .achievements-section{
+        padding-top:150px;
+    }
+
+    .achievement-card{
+        width:100%;
+    }
+
+    .achievements-section .title{
+        font-size:1.8em;
+    }
+}
+
+@media (max-width:425px){
+
+    .achievements-section{
+        padding-top:180px;
+    }
+
+    .achievement-card{
+        width:100%;
+    }
+}
+
+@media (max-width:375px){
+
+    .achievements-section{
+        padding-top:170px;
+    }
+
+    .achievement-card{
+        width:100%;
+    }
+}
 
 
 /* Contact Section */
